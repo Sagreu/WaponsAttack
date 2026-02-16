@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Suelo
+  - Arma
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - LimitesCamera
+  - PlayerHitbox
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 24308685
+    locked: 0
+  - name: Floor
+    uniqueID: 4078317349
+    locked: 0
+  - name: Walls
+    uniqueID: 3222294977
+    locked: 0
+  - name: Player
+    uniqueID: 593847017
+    locked: 0
+  - name: Enemies
+    uniqueID: 4260302653
+    locked: 0
+  - name: Weapon
+    uniqueID: 3650347185
+    locked: 0
+  - name: UI
+    uniqueID: 1060746969
+    locked: 0
+  m_RenderingLayers:
+  - Default
