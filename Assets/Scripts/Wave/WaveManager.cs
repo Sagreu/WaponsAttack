@@ -22,6 +22,8 @@ public class WaveManager : MonoBehaviour
 
     public SlimeJefeVida slimeJefeVida;
 
+    [SerializeField] private WeaponManager weaponManager;
+
     private void Start()
     {
         if (_enemyController == null)
@@ -54,7 +56,7 @@ public class WaveManager : MonoBehaviour
         // uiText.SetActive(false);
         waveUi.HidenTitle();
         totalEnemies = GetEnemyCount();
-        if(currentState == WaveState.State3)
+        if (currentState == WaveState.State3)
         {
             totalEnemies += 1;
         }
@@ -73,7 +75,7 @@ public class WaveManager : MonoBehaviour
     IEnumerator SpawnEnemiesGradually()
     {
         waveUi.HideStatus();
-        if(currentState == WaveState.State3)
+        if (currentState == WaveState.State3)
         {
             _enemyController.SpawnBoos(RegisterBoss);
             enemiesToSpawn--;
@@ -161,6 +163,8 @@ public class WaveManager : MonoBehaviour
             currentState = WaveState.State1;
             level++;
         }
+
+        UpdateWeaponSlots();
     }
 
     // -------------------------
@@ -172,6 +176,23 @@ public class WaveManager : MonoBehaviour
         int stateMultiplier = (int)currentState + 1;
 
         return baseEnemies * level * stateMultiplier;
+    }
+
+    void UpdateWeaponSlots()
+    {
+        int slots = GetSlotsForLevel(level);
+        weaponManager.SetMaxSlots(slots);
+
+        Debug.Log($"🔓 Slots desbloqueados: {slots}");
+    }
+
+    int GetSlotsForLevel(int lvl)
+    {
+        if (lvl < 3) return 2;
+        if (lvl < 5) return 3;
+        if (lvl < 7) return 4;
+
+        return 5;
     }
 
 }

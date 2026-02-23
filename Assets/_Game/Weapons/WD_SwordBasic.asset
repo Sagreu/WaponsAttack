@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d5268ba3dcd284bae60d1e5468acae, type: 3}
   m_Name: WD_SwordBasic
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponName: 
-  sprite: {fileID: 0}
+  weaponName: Basic
+  sprite: {fileID: 9214599474657386639, guid: 6a89c15ffc374b04096463a6e5d7cedf, type: 3}
   damage: 10
-  durability: 20
+  durability: 10
   lifeTime: 0

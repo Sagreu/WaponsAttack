@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d5268ba3dcd284bae60d1e5468acae, type: 3}
   m_Name: WD_SwordThunder
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponName: 
-  sprite: {fileID: 0}
-  damage: 10
-  durability: 20
+  weaponName: Thunder
+  sprite: {fileID: -3435769484588903077, guid: edc52a7eddacdc54e904dada34b304ed, type: 3}
+  damage: 20
+  durability: 15
   lifeTime: 0

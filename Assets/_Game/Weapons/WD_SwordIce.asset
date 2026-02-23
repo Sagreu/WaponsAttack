@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d5268ba3dcd284bae60d1e5468acae, type: 3}
   m_Name: WD_SwordIce
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponName: 
-  sprite: {fileID: 0}
-  damage: 10
-  durability: 20
+  weaponName: Ice
+  sprite: {fileID: 6608977860917380928, guid: bcb75a1cc030a064da34fe7b12938051, type: 3}
+  damage: 15
+  durability: 5
   lifeTime: 0

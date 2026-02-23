@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d5268ba3dcd284bae60d1e5468acae, type: 3}
   m_Name: WD_SwordFire
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponName: 
-  sprite: {fileID: 0}
-  damage: 10
+  weaponName: Fire
+  sprite: {fileID: -637176915849565265, guid: 6aa89c296c7bd754688aa4b8543078b4, type: 3}
+  damage: 15
   durability: 20
   lifeTime: 0

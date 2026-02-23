@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 2357438161060724048}
   - component: {fileID: 710659818876055409}
   - component: {fileID: 1621744538340062317}
-  - component: {fileID: 6605067347254275682}
   - component: {fileID: 2899647572821088432}
-  - component: {fileID: 6839301292115557199}
+  - component: {fileID: -4859603274267544953}
   m_Layer: 6
-  m_Name: OrbitalWeaponPrefab
+  m_Name: OrbitalWeaponPrefab 3
   m_TagString: Arma
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,15 +84,15 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 6608977860917380928, guid: bcb75a1cc030a064da34fe7b12938051, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.1333334, y: 2.1333334}
+  m_Size: {x: 2, y: 2.1333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!60 &1621744538340062317
 PolygonCollider2D:
@@ -134,7 +133,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.1333334, y: 2.1333334}
-    newSize: {x: 2.1333334, y: 2.1333334}
+    newSize: {x: 2, y: 2.1333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -149,19 +148,6 @@ PolygonCollider2D:
       - {x: 0.9618081, y: 0.616465}
       - {x: 0.9393381, y: 0.9618079}
   m_UseDelaunayMesh: 1
---- !u!114 &6605067347254275682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433163682641746687}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6312194c55e2b3f42acf466e70c4697e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DanoABoss
-  danoABoss: 10
 --- !u!50 &2899647572821088432
 Rigidbody2D:
   serializedVersion: 5
@@ -189,7 +175,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6839301292115557199
+--- !u!114 &-4859603274267544953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,9 +184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6433163682641746687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33224758f3463db478377e8e1d3af2a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b9dc39d837678745be1aa42d476bc27, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OrbitalWeapons
-  data: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  hitCooldown: 0.25
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponPickup
+  weaponData: {fileID: 11400000, guid: a321de0f290eddc4aaa2f9803f8b5136, type: 2}

@@ -2,17 +2,21 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
+    [Header("Datos del arma")]
     [SerializeField] private WeaponData weaponData;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        WeaponManager manager = collision.GetComponentInParent<WeaponManager>();
+        // Buscamos el Player en la raíz del objeto que colisionó
+        Transform root = collision.transform.root;
+
+        if (!root.CompareTag("Player")) return;
+
+        WeaponManager manager = root.GetComponentInChildren<WeaponManager>();
 
         if (manager == null) return;
 
-        bool added = manager.AddWeapon(weaponData, randomSlot: true);
-
-        if (added)
+        if (manager.AddWeapon(weaponData, true))
         {
             Destroy(gameObject);
         }

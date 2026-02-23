@@ -14,6 +14,8 @@ public class WeaponManager : MonoBehaviour
     [Header("Starting Weapon")]
     [SerializeField] private WeaponData startingWeapon;
 
+    [SerializeField] private int maxActiveSlots = 2;
+
     private OrbitalWeapons[] equipped;
 
     private void Awake()
@@ -48,7 +50,7 @@ public class WeaponManager : MonoBehaviour
 
         List<int> emptySlots = new List<int>();
 
-        for (int i = 0; i < equipped.Length; i++)
+        for (int i = 0; i < maxActiveSlots; i++)
         {
             if (equipped[i] == null)
             {
@@ -58,25 +60,18 @@ public class WeaponManager : MonoBehaviour
 
         if (emptySlots.Count == 0)
         {
-            Debug.Log("No hay slots vacíos (ya tienes el máximo).");
+            Debug.Log("Slots activos llenos.");
             return false;
         }
 
-        int slotIndex;
+        int slotIndex = randomSlot
+            ? emptySlots[Random.Range(0, emptySlots.Count)]
+            : emptySlots[0];
 
-        if (randomSlot)
-            slotIndex = emptySlots[Random.Range(0, emptySlots.Count)];
-        else
-            slotIndex = emptySlots[0];
-
-        Debug.Log("Instanciando arma en slot: " + slotIndex);
-
-        // Instancia
         OrbitalWeapons newWeapon = Instantiate(weaponsPrefab, slots[slotIndex]);
         newWeapon.transform.localPosition = Vector3.zero;
         newWeapon.transform.localRotation = Quaternion.identity;
-        newWeapon.transform.localRotation = Quaternion.Euler(0, 0, -40f);
-        // Configura datos
+
         newWeapon.SetData(data);
         newWeapon.OnBroken += HandleWeaponBroken;
 
@@ -108,5 +103,10 @@ public class WeaponManager : MonoBehaviour
         }
 
         return count;
+    }
+
+    public void SetMaxSlots(int amount)
+    {
+        maxActiveSlots = Mathf.Clamp(amount, 1, slots.Length);
     }
 }
