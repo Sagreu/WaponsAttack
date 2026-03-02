@@ -46,11 +46,17 @@ public class HealtPlayers : MonoBehaviour
     {
         estaMuerto = true;
         print("El player a muerto");
-
+        EstaMuerto(estaMuerto);
         yield return null;
         Time.timeScale = 0f;
         GameObject.Destroy(gameObject);
-       
+
     }
+    public bool EstaMuerto(bool dead)
+    {
+        return estaMuerto = dead;
+    }
+
+
+
 }
- 

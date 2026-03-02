@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     [Header("Panels")]
-    [SerializeField] private GameObject LevelPanel;
+    [SerializeField] private GameObject LevelConteiner;
     [SerializeField] private GameObject SettingsPanel;
     [SerializeField] private GameObject StorePanel;
     [SerializeField] private GameObject PlayersPanel;
-
+    [Header("ScrollView")]
+    [SerializeField] private GameObject ScrolView;
+    [SerializeField] private GameObject worldPanel;
 
 
     private void Start()
@@ -21,10 +23,10 @@ public class MainMenuUI : MonoBehaviour
         SceneManager.LoadScene("GameCore");
     }
 
-    public void OpenLevels()
+    public void levelConteiner()
     {
         AllClousePanelns();
-        LevelPanel.SetActive(true);
+        LevelConteiner.SetActive(true);
     }
 
     public void OpenSettings()
@@ -44,11 +46,17 @@ public class MainMenuUI : MonoBehaviour
         AllClousePanelns();
         PlayersPanel.SetActive(true);
     }
+    public void OpenZonesView()
+    {
+        worldPanel.SetActive(true);
+        ScrolView.SetActive(true);
+    }
+
 
     private void AllClousePanelns()
     {
 
-        LevelPanel.SetActive(false);
+        //LevelPanel.SetActive(false);
         SettingsPanel.SetActive(false);
         StorePanel.SetActive(false);
         PlayersPanel.SetActive(false);

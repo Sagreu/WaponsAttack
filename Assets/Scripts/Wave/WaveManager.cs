@@ -5,7 +5,7 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField]
     public EnemyController _enemyController;
-    public int level = 1;
+    public int level;
     public WaveState currentState;
 
     private int enemiesAlive;
@@ -23,7 +23,9 @@ public class WaveManager : MonoBehaviour
     public SlimeJefeVida slimeJefeVida;
 
     [SerializeField] private WeaponManager weaponManager;
-
+    private const string UNLOCKED_LEVEL_KEY = "unlockedKey";
+    private const string BEST_LEVEL_KEY = "bestKEY";
+    private bool levelCompleted = false;
     private void Start()
     {
         if (_enemyController == null)
@@ -32,6 +34,13 @@ public class WaveManager : MonoBehaviour
             return;
         }
         StartCoroutine(StartWaveCoroutine());
+
+    }
+    private void Awake()
+    {
+        level = GameData.SelectedLevel;
+        // PARA OBTENER EL SELECCIONADO level = GameData.SelectedLevel;
+
     }
 
     // -------------------------
@@ -40,20 +49,12 @@ public class WaveManager : MonoBehaviour
     IEnumerator StartWaveCoroutine()
     {
         int state = (int)currentState;
-        // 🔹 AQUÍ PUEDES MOSTRAR TEXTO
-        // Ejemplo futuro:
-        // uiText.text = $"Nivel {level} - {currentState}";
-        // waveUi.ShowWaveText($"Nivel {level} - {currentState}", 1.5f);
         waveUi.ShowWaveTitle(level, state);
         waveUi.ShowStatus("PREPÁRATE");
-        // uiText.SetActive(true);
-
         Debug.Log($"⏳ Preparando Nivel {level} - Estado {currentState}");
 
         // Espera antes de iniciar la oleada
         yield return new WaitForSeconds(delayBetweenWaves);
-
-        // uiText.SetActive(false);
         waveUi.HidenTitle();
         totalEnemies = GetEnemyCount();
         if (currentState == WaveState.State3)
@@ -65,7 +66,7 @@ public class WaveManager : MonoBehaviour
         enemiesRemaining = totalEnemies;
         waveUi.UpdateEnemiesLeft(enemiesRemaining);
 
-        // Spawn progresivo
+        // Spawn progre
         yield return StartCoroutine(SpawnEnemiesGradually());
     }
 
@@ -113,10 +114,11 @@ public class WaveManager : MonoBehaviour
     // -------------------------
     void OnEnemyDead()
     {
+        if (levelCompleted) return;
+        print("levelCompleted" +  levelCompleted);
         enemiesRemaining--;
         enemiesAlive--;
         waveUi.UpdateEnemiesLeft(enemiesRemaining);
-        Debug.Log("OnEnemyDead" + "enemiesAlive " + enemiesAlive + "enemiesToSpawn " + enemiesToSpawn);
 
         if (enemiesAlive <= 0 && enemiesToSpawn <= 0)
         {
@@ -129,24 +131,16 @@ public class WaveManager : MonoBehaviour
     // -------------------------
     IEnumerator EndWaveCoroutine()
     {
-        // 🔹 AQUÍ PUEDES MOSTRAR TEXTO DE FIN DE OLEADA
-        // Ejemplo:
-        // uiText.text = "OLEADA COMPLETADA";
-        //waveUi.ShowWaveText("OLEADA COMPLETADA", 1.5f);
+        if (levelCompleted) yield break;
         waveUi.ShowStatus("OLEADA TERMINADA");
-        // uiText.SetActive(true);
 
         Debug.Log("✅ Oleada completada");
 
         yield return new WaitForSeconds(delayBetweenWaves);
-
-        // uiText.SetActive(false);
         waveUi.HideStatus();
         waveUi.HideWaveTitle();
-
-
         AdvanceState();
-        StartCoroutine(StartWaveCoroutine());
+
     }
 
     // -------------------------
@@ -157,14 +151,17 @@ public class WaveManager : MonoBehaviour
         if (currentState < WaveState.State3)
         {
             currentState++;
+            UpdateWeaponSlots();
+            StartCoroutine(StartWaveCoroutine());
         }
         else
         {
-            currentState = WaveState.State1;
-            level++;
+            //currentState = WaveState.State1;
+            //level++;
+            CompletedLevel();
         }
 
-        UpdateWeaponSlots();
+
     }
 
     // -------------------------
@@ -193,6 +190,30 @@ public class WaveManager : MonoBehaviour
         if (lvl < 7) return 4;
 
         return 5;
+    }
+
+    void CompletedLevel()
+    {
+        if (levelCompleted) return;
+        levelCompleted = true;
+        StopAllCoroutines();
+        print("Nivel {level} completado");
+        GameProgress.UnLockedLevel(level + 1);
+        GameProgress.BestLevel(level);
+
+        // Mostrar UI de victoria (opcional)
+        waveUi.ShowStatus("¡NIVEL COMPLETADO!");
+
+        // Terminar partida después de unos segundos
+        StartCoroutine(EndGameAfterDelay());
+    }
+
+    IEnumerator EndGameAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+
+        // Regresar al menú de niveles
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
 }
