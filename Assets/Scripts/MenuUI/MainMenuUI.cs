@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,8 @@ public class MainMenuUI : MonoBehaviour
     [Header("ScrollView")]
     [SerializeField] private GameObject ScrolView;
     [SerializeField] private GameObject worldPanel;
+    [SerializeField] private FadeTransition fadeTransition;
+    
 
 
     private void Start()
@@ -48,17 +51,41 @@ public class MainMenuUI : MonoBehaviour
     }
     public void OpenZonesView()
     {
-        worldPanel.SetActive(true);
-        ScrolView.SetActive(true);
+        fadeTransition.fadeToZonas();
+        StartCoroutine(Esperar());
     }
 
 
     private void AllClousePanelns()
     {
-
-        //LevelPanel.SetActive(false);
         SettingsPanel.SetActive(false);
         StorePanel.SetActive(false);
         PlayersPanel.SetActive(false);
+    }
+    IEnumerator Esperar()
+    {
+        float esperar = 0.5f;
+
+       yield return new WaitForSeconds(esperar);
+        worldPanel.SetActive(true);
+        ScrolView.SetActive(true);
+    }
+    IEnumerator CerrarTodo()
+    {
+        float esperar = 0.5f;
+
+        yield return new WaitForSeconds(esperar);
+        worldPanel.SetActive(false);
+        ScrolView.SetActive(false);
+        SettingsPanel.SetActive(false);
+        StorePanel.SetActive(false);
+        PlayersPanel.SetActive(false);
+        LevelConteiner.SetActive(false);
+    }
+    public void Cerrar()
+    {
+        fadeTransition.fadeToHome();
+        StartCoroutine(CerrarTodo());
+
     }
 }

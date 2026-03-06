@@ -4,15 +4,26 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI levelText;
+
     [SerializeField] private Button button;
    // [SerializeField] private GameObject lockIcon;
     private int levelId;
+    [Header(" Textos, and starts")]
+    [SerializeField] private TMP_Text infoText;
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private Image[] stars;
 
-    public void Setup(int id, bool unlocked)
+
+
+    public void Setup(int id, bool unlocked, string info, string name, int starCount)
     {
         levelId = id;
-        levelText.text = "Nivel" + id;
+        levelText.text = name;
+        infoText.text = info;
+
+        for (int i = 0; i < stars.Length; i++) {
+            stars[i].gameObject.SetActive(i < starCount);
+            }
 
     }
 

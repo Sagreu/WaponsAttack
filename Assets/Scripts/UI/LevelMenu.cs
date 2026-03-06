@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,28 +9,28 @@ public class LevelMenu : MonoBehaviour
     [SerializeField] private Transform content;//el de mi content vertical
     [SerializeField] private GameObject levelButtonPrefab;
     [SerializeField] private int levelsPerZone = 5;
-    [SerializeField]private ScrollRect scrollRect;
+    [SerializeField] private ScrollRect scrollRect;
+    [SerializeField] private List<LevelData> allLevels;
 
     public void GenerateLevels(int zoneId)
     {
         int unlockedLevel = GameProgress.GetUnLockedLevel();
 
-        int maxLevelInZone = zoneId * levelsPerZone;
-        int minLevelInZone = maxLevelInZone - levelsPerZone + 1;
-
-        //Se calcula hasta que nivel de esa zona esta desbloqueado
-
-        int nivelDesbloqueado = Mathf.Min(unlockedLevel, maxLevelInZone);
-
-        if(nivelDesbloqueado < minLevelInZone)
-            return;
-
-        for (int level = nivelDesbloqueado; level >= minLevelInZone; level--)
+        foreach (LevelData levelData in allLevels)
         {
+            if(levelData.zoneId != zoneId)
+                continue;
+        if(levelData.levelId >  unlockedLevel)
+                continue;
+
             GameObject btn = Instantiate(levelButtonPrefab, content);
             LevelButton levelBtn = btn.GetComponent<LevelButton>();
-            levelBtn.Setup(level, true);
+            //int stars = GameProgress.GetStars(level.levelId);
+            int stars = 3;
 
+            //bool unlocked = levelData.levelId <= unlockedLevel;
+
+            levelBtn.Setup(levelData.levelId, true, levelData.description, levelData.levelName, stars);
         }
         StartCoroutine(MoveScrollToTop());
     }
@@ -40,3 +42,4 @@ public class LevelMenu : MonoBehaviour
         scrollRect.verticalNormalizedPosition = 1f;
     }
 }
+ 
