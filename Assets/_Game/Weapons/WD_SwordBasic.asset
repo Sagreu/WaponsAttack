@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Basic
   sprite: {fileID: 9214599474657386639, guid: 6a89c15ffc374b04096463a6e5d7cedf, type: 3}
+  marco: {fileID: 0}
   damage: 10
   durability: 10
   lifeTime: 0
+  unlocked: 1
+  id: 1
+  description: Espada Normal
+  history: Encontrada en una vieja choza
+  rareza: Normal

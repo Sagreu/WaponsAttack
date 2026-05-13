@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelId: 1
   levelName: Calabozo
-  description: 'Calabozo subterraneo de Morder
-
-    iniciacion.'
+  description: Calabozo subterraneo de Morder iniciacion.
   zoneId: 1
   sceneName: GameCore

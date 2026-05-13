@@ -43,16 +43,30 @@ public class MainMenuUI : MonoBehaviour
         AllClousePanelns();
         StorePanel.SetActive(true);
     }
-
+    //vamos aqui
     public void OpenPlayer()
     {
-        AllClousePanelns();
+        //AllClousePanelns();
+        if(worldPanel.active == true)
+        {
+            worldPanel.SetActive(false);
+        }
         PlayersPanel.SetActive(true);
     }
     public void OpenZonesView()
     {
         fadeTransition.fadeToZonas();
         StartCoroutine(Esperar());
+    }
+    
+    public void CloseZonesView()
+    {
+        //fadeTransition.fadeToZonas();
+        // StartCoroutine(Esperar());
+        worldPanel.SetActive(false);
+        fadeTransition.fadeToHome();
+
+
     }
 
 

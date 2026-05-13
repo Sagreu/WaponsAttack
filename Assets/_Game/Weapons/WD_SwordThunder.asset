@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Thunder
   sprite: {fileID: -3435769484588903077, guid: edc52a7eddacdc54e904dada34b304ed, type: 3}
+  marco: {fileID: 0}
   damage: 20
   durability: 15
   lifeTime: 0
+  unlocked: 1
+  id: 4
+  description: Espada de Truenos
+  history: 
+  rareza: 

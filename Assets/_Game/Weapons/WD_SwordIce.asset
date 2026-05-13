@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Ice
   sprite: {fileID: 6608977860917380928, guid: bcb75a1cc030a064da34fe7b12938051, type: 3}
+  marco: {fileID: 0}
   damage: 15
   durability: 5
   lifeTime: 0
+  unlocked: 1
+  id: 3
+  description: Espada de Hielo
+  history: 
+  rareza: 

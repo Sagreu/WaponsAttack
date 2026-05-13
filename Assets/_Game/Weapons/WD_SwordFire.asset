@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Fire
   sprite: {fileID: -637176915849565265, guid: 6aa89c296c7bd754688aa4b8543078b4, type: 3}
+  marco: {fileID: 0}
   damage: 15
   durability: 20
   lifeTime: 0
+  unlocked: 1
+  id: 2
+  description: Espada de Fuego
+  history: 
+  rareza: 

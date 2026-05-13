@@ -12,6 +12,8 @@ public class ZonaPanel : MonoBehaviour
     [SerializeField] private Button button;
     //[SerializeField] private GameObject lockIcon;
     [SerializeField] private TextMeshProUGUI zoneText;
+    [SerializeField] private Button BtnTMP;
+    [SerializeField] private ZoneBackgroundController zoneBackgroundController;
 
     private void Start()
     {
@@ -25,11 +27,21 @@ public class ZonaPanel : MonoBehaviour
 
         bool unlocked = unLockedLevel > lastLevelPreviousZone;
         button.interactable = unlocked;
-       // lockIcon.SetActive(!unlocked);
+        // lockIcon.SetActive(!unlocked);
     }
 
     public void OnZonePressed()
     {
-        levelMenuManager.OpenZone(zoneId);
+
+        BtnTMP.gameObject.SetActive(false);
+        zoneBackgroundController.ChangeBackgroundController(zoneId);
+        levelMenuManager.OpenZone(zoneId, this);
+       
     }
+    public void ActiveCloseWordlPanel()
+    {
+        //BtnTMP = GameObject.Find("CloseWorldPanel").GetComponent<Button>();
+        BtnTMP.gameObject.SetActive(true);
+    }
+
 }

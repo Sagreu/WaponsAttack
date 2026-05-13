@@ -11,6 +11,8 @@ public class LevelMenu : MonoBehaviour
     [SerializeField] private int levelsPerZone = 5;
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private List<LevelData> allLevels;
+    [SerializeField] private Button BtnTMP;
+    [SerializeField] private ZonaPanel zonaPanel;
 
     public void GenerateLevels(int zoneId)
     {
@@ -18,9 +20,9 @@ public class LevelMenu : MonoBehaviour
 
         foreach (LevelData levelData in allLevels)
         {
-            if(levelData.zoneId != zoneId)
+            if (levelData.zoneId != zoneId)
                 continue;
-        if(levelData.levelId >  unlockedLevel)
+            if (levelData.levelId > unlockedLevel)
                 continue;
 
             GameObject btn = Instantiate(levelButtonPrefab, content);
@@ -41,5 +43,18 @@ public class LevelMenu : MonoBehaviour
         Canvas.ForceUpdateCanvases();
         scrollRect.verticalNormalizedPosition = 1f;
     }
+
+    public void OnCloseZone()
+    {
+        BtnTMP.gameObject.SetActive(false);
+        ZoneBackgroundController.Instance.RestoredDefaultBackground();
+        Destroy(gameObject);
+        zonaPanel.ActiveCloseWordlPanel();
+
+    }
+
+    public void SetZonaPanel(ZonaPanel zona)
+    {
+        zonaPanel = zona;
+    }
 }
- 

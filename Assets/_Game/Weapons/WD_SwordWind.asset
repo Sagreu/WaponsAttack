@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Wind
   sprite: {fileID: 4119801618915546468, guid: a73a96ce09fbefb47b0e8f450a5702b9, type: 3}
+  marco: {fileID: 0}
   damage: 25
   durability: 20
-  lifeTime: 0
+  lifeTime: 5
+  unlocked: 1
+  id: 5
+  description: Espada de Viento
+  history: 
+  rareza: 
