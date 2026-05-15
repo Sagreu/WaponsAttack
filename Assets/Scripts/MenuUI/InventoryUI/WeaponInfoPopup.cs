@@ -47,8 +47,10 @@ public class WeaponInfoPopup : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void OnEquip() { 
-    inventoryManager.EquiparArma(selectedWeapon);
+    void OnEquip()
+    {
+        inventoryManager.EquiparArma(selectedWeapon);
     }
+
 
 }

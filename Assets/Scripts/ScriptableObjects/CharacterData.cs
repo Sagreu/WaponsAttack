@@ -1,0 +1,16 @@
+using UnityEngine;
+[CreateAssetMenu(fileName ="CharacterData", menuName = "Character/Character Data")]
+public class CharacterData : ScriptableObject
+{
+    public int characterId;
+    public string characterName;
+    [TextArea]
+    public string lore;
+    public string gender;
+    public string role;
+
+    public Sprite icon;
+    public Sprite portrait;
+
+    public bool unlocked;
+}
