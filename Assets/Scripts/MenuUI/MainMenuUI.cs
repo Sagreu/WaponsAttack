@@ -7,7 +7,10 @@ public class MainMenuUI : MonoBehaviour
     [Header("Panels")]
     [SerializeField] private GameObject LevelConteiner;
     [SerializeField] private GameObject SettingsPanel;
+    [Header("StorePanels")]
     [SerializeField] private GameObject StorePanel;
+    [SerializeField] private GameObject characterAndWaeponsPanel;
+    [Header("PlayersPanel")]
     [SerializeField] private GameObject PlayersPanel;
     [Header("ScrollView")]
     [SerializeField] private GameObject ScrolView;
@@ -42,6 +45,7 @@ public class MainMenuUI : MonoBehaviour
     {
         AllClousePanelns();
         StorePanel.SetActive(true);
+        characterAndWaeponsPanel.SetActive(true);
     }
     //vamos aqui
     public void OpenPlayer()

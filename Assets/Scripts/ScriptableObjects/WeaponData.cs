@@ -19,5 +19,18 @@ using UnityEngine;
     public string description;
     [TextArea]
     public string history;
-    public string rareza;
+    //public string rareza;
+    public WaeponRaririty rarity;
+    public bool obtenibleGacha;
+
+}
+
+
+public enum WaeponRaririty
+{
+    Common,
+    Rare,
+    Epic,
+    Legendary,
+    Mythic
 }

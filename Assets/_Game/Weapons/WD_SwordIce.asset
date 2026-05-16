@@ -22,4 +22,5 @@ MonoBehaviour:
   id: 3
   description: Espada de Hielo
   history: 
-  rareza: 
+  rarity: 2
+  obtenibleGacha: 1

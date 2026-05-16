@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonedaManager : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class MonedaManager : MonoBehaviour
         PlayerPrefs.SetInt(GOLD_KEY, gold);
         PlayerPrefs.SetInt(RELIC_KEY, reliquia);
         PlayerPrefs.Save();
-        
+
     }
 
     public void AddGold(int amount)
@@ -50,8 +51,8 @@ public class MonedaManager : MonoBehaviour
     }
 
     public bool SpendGold(int amount)
-    { 
-        if(gold < amount)
+    {
+        if (gold < amount)
             return false;
 
         gold -= amount;
@@ -59,13 +60,14 @@ public class MonedaManager : MonoBehaviour
         return true;
     }
 
-     public bool SpendRelic(int amount)
+    public bool SpendRelic(int amount)
     {
-        if(reliquia < amount)
+        if (reliquia < amount)
             return false;
 
         reliquia -= amount;
         SaveMoneda();
         return true;
     }
+
 }

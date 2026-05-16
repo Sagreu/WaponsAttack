@@ -562,15 +562,6 @@ MonoBehaviour:
   levelButtonPrefab: {fileID: 6142079373817346146, guid: 5ffaf3b7629896145b87399d64ad08c7, type: 3}
   levelsPerZone: 5
   scrollRect: {fileID: 3078931194877945577}
-  allLevels:
-  - {fileID: 11400000, guid: 10324b25ad4036041afc0aca82a509da, type: 2}
-  - {fileID: 11400000, guid: 407fe3ec9aa37d942b969ff21e9d7562, type: 2}
-  - {fileID: 11400000, guid: dacbb5cdbbde4b946bdde89af12511cf, type: 2}
-  - {fileID: 11400000, guid: 21d2699f3b908f44e95abd1819cdf2c0, type: 2}
-  - {fileID: 11400000, guid: 71e58d0d0eed790498883ad363718863, type: 2}
-  - {fileID: 11400000, guid: a4ea7a2a49e266742820d753090afeff, type: 2}
-  - {fileID: 11400000, guid: aa68ac86af6265643b66305c79b60f6a, type: 2}
-  - {fileID: 11400000, guid: 102d10875cc95024e9c608197baf88df, type: 2}
-  - {fileID: 11400000, guid: 869af66d76df3de48b2ab2f900792f4a, type: 2}
-  - {fileID: 11400000, guid: ad60ce986f545dd45b4558177a08038a, type: 2}
+  dataBase: {fileID: 11400000, guid: db1ef6506beedf2479cf8e90e7ff7b38, type: 2}
   BtnTMP: {fileID: 5504572652396037947}
+  zonaPanel: {fileID: 0}

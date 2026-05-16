@@ -22,4 +22,5 @@ MonoBehaviour:
   id: 2
   description: Espada de Fuego
   history: 
-  rareza: 
+  rarity: 1
+  obtenibleGacha: 1

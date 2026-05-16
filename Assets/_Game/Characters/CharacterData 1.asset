@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d07c03414253c4c97d76a6e390bf56, type: 3}
   m_Name: CharacterData 1
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterId: 1
+  characterId: 2
   characterName: KARTAROS
   lore: 45454454546546546465
   gender: MASCULINO
@@ -20,3 +20,5 @@ MonoBehaviour:
   icon: {fileID: -2876228858545921041, guid: 7e22ecee5a593814c9010ccdaef460b0, type: 3}
   portrait: {fileID: 2463603706410567415, guid: 883c6deba954ede488573934e58deb04, type: 3}
   unlocked: 1
+  priceGold: 1000
+  purchased: 1

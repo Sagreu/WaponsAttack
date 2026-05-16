@@ -22,4 +22,5 @@ MonoBehaviour:
   id: 5
   description: Espada de Viento
   history: 
-  rareza: 
+  rarity: 4
+  obtenibleGacha: 1

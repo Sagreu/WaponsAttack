@@ -10,7 +10,8 @@ public class LevelMenu : MonoBehaviour
     [SerializeField] private GameObject levelButtonPrefab;
     [SerializeField] private int levelsPerZone = 5;
     [SerializeField] private ScrollRect scrollRect;
-    [SerializeField] private List<LevelData> allLevels;
+    //[SerializeField] private List<LevelData> allLevels;
+    public GameDataBase dataBase;
     [SerializeField] private Button BtnTMP;
     [SerializeField] private ZonaPanel zonaPanel;
 
@@ -18,7 +19,7 @@ public class LevelMenu : MonoBehaviour
     {
         int unlockedLevel = GameProgress.GetUnLockedLevel();
 
-        foreach (LevelData levelData in allLevels)
+        foreach (LevelData levelData in dataBase.levels)
         {
             if (levelData.zoneId != zoneId)
                 continue;

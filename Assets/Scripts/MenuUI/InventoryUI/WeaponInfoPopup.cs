@@ -39,7 +39,7 @@ public class WeaponInfoPopup : MonoBehaviour
               "Durabilidad: " + weapon.durability + "\n" +
               "Tiempo De vida: " + a;
         history.text = weapon.history;
-        rareza.text = weapon.rareza;
+        rareza.text = weapon.rarity.ToString();
     }
 
     void ClosePopup()

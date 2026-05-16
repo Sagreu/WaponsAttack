@@ -22,4 +22,5 @@ MonoBehaviour:
   id: 4
   description: Espada de Truenos
   history: 
-  rareza: 
+  rarity: 3
+  obtenibleGacha: 1

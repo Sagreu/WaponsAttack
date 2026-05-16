@@ -13,4 +13,7 @@ public class CharacterData : ScriptableObject
     public Sprite portrait;
 
     public bool unlocked;
+
+    public int priceGold;
+    public bool purchased;
 }

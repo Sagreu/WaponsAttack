@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<WeaponData> allWeapons;
+    //public List<WeaponData> allWeapons;
+    //public GameDataBase dataBase;
     public Transform waeponContent;
     public GameObject weaponSlotPrefabs;
 
@@ -20,7 +21,8 @@ public class InventoryManager : MonoBehaviour
     public List<Button> botonesSlots;
 
     [Header("Data Characters")]
-    public List<CharacterData> allCharacters;
+    //public List<CharacterData> allCharacters;
+    public GameDataBase dataBase;
     public Transform content;
     public GameObject characterSlotPrefab;
     public Image centerCharacterImage;
@@ -43,7 +45,7 @@ public class InventoryManager : MonoBehaviour
 
     void LoadWeapons()
     {
-        foreach (var weapon in allWeapons)
+        foreach (var weapon in dataBase.weapons)
         {
             if (!weapon.unlocked) continue;
             GameObject obj = Instantiate(weaponSlotPrefabs, waeponContent);
@@ -118,7 +120,7 @@ public class InventoryManager : MonoBehaviour
 
     void LoadCharacters()
     {
-        foreach (var character in allCharacters)
+        foreach (var character in dataBase.characters)
         {
             if (!character.unlocked)
                 continue;
@@ -158,5 +160,14 @@ public class InventoryManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         warningPanel.SetActive(false);
+    }
+    public void RefreshCharacters()
+    {
+        foreach (Transform child in content)
+        {
+            Destroy(child.gameObject);
+        }
+
+        LoadCharacters();
     }
 }
