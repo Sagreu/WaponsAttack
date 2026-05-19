@@ -16,4 +16,5 @@ public class CharacterData : ScriptableObject
 
     public int priceGold;
     public bool purchased;
+    public GameObject prefab;
 }

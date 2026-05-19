@@ -8,6 +8,7 @@ TagManager:
   - Arma
   - Enemy
   - Boss
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Player
   - LimitesCamera
   - PlayerHitbox
-  - 
+  - Swords
   - 
   - 
   - 
@@ -54,7 +55,7 @@ TagManager:
   - name: Walls
     uniqueID: 3222294977
     locked: 0
-  - name: Player
+  - name: Swords
     uniqueID: 593847017
     locked: 0
   - name: Enemies
@@ -65,6 +66,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1060746969
+    locked: 0
+  - name: Player
+    uniqueID: 483038663
     locked: 0
   m_RenderingLayers:
   - Default

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,12 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private TMP_Text infoText;
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private Image[] stars;
+    private InventoryManager inventoryManager;
+
+    public void Awake()
+    {
+        inventoryManager = FindObjectOfType<InventoryManager>();
+    }
 
 
 
@@ -31,6 +38,8 @@ public class LevelButton : MonoBehaviour
     {
         GameData.SelectedLevel = levelId;
         print("Cargar nivel");
+        GameSession.selectedWeapons = new List<WeaponData>(inventoryManager.weaponsEquipadas);
+        GameSession.selectedCharacter = inventoryManager.selectedCharacter;
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameCore");
     }
 }

@@ -35,11 +35,11 @@ public static class GameProgress
         }
     }
 
-    /*PARA TESTEAR 
+    //PARA TESTEAR 
     public static void DeleteKeys()
     {
         PlayerPrefs.DeleteKey(UNLOCKED_LEVEL_KEY);
         PlayerPrefs.DeleteKey(BEST_LEVEL_KEY);
     }
-    */
+    
 }

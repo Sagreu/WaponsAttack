@@ -26,19 +26,24 @@ public class WaveManager : MonoBehaviour
     private const string UNLOCKED_LEVEL_KEY = "unlockedKey";
     private const string BEST_LEVEL_KEY = "bestKEY";
     private bool levelCompleted = false;
-    private void Start()
+    private IEnumerator Start()
     {
         if (_enemyController == null)
         {
             Debug.LogError("EnemyController NO asignado en WaveManager");
-            return;
+            yield break;
         }
-        StartCoroutine(StartWaveCoroutine());
+       
+        yield return null;
+        weaponManager = FindObjectOfType<WeaponManager>();
 
+        Debug.Log("WeaponManager encontrado: " + weaponManager);
+        StartCoroutine(StartWaveCoroutine());
     }
     private void Awake()
     {
         level = GameData.SelectedLevel;
+        
         // PARA OBTENER EL SELECCIONADO level = GameData.SelectedLevel;
 
     }
@@ -177,19 +182,10 @@ public class WaveManager : MonoBehaviour
 
     void UpdateWeaponSlots()
     {
-        int slots = GetSlotsForLevel(level);
+        int slots = SlotRules.GetSlotForLevel(level); 
         weaponManager.SetMaxSlots(slots);
 
         Debug.Log($"🔓 Slots desbloqueados: {slots}");
-    }
-
-    int GetSlotsForLevel(int lvl)
-    {
-        if (lvl < 3) return 2;
-        if (lvl < 5) return 3;
-        if (lvl < 7) return 4;
-
-        return 5;
     }
 
     void CompletedLevel()

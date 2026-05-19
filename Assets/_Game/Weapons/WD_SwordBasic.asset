@@ -18,10 +18,9 @@ MonoBehaviour:
   damage: 10
   durability: 10
   lifeTime: 0
-  unlocked: 0
+  unlocked: 1
   id: 1
   description: Espada Normal
   history: Encontrada en una vieja choza
-  rareza: Normal
   rarity: 0
   obtenibleGacha: 1

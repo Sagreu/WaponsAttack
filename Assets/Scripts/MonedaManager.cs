@@ -23,7 +23,10 @@ public class MonedaManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
 
+    }
 
     void LoadMonedas()
     {

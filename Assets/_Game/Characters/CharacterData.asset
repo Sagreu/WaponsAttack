@@ -17,8 +17,9 @@ MonoBehaviour:
   lore: dadadadadsaasadasda
   gender: MASCULINO
   role: ASESINO
-  icon: {fileID: 21300000, guid: c0c3d8819bcd8484f809b41ef8f32fc8, type: 3}
-  portrait: {fileID: 21300000, guid: c0c3d8819bcd8484f809b41ef8f32fc8, type: 3}
+  icon: {fileID: 21300000, guid: 4713e8a65a98eb8428e5e1281b3d9bbf, type: 3}
+  portrait: {fileID: 21300000, guid: 4713e8a65a98eb8428e5e1281b3d9bbf, type: 3}
   unlocked: 1
   priceGold: 500
   purchased: 1
+  prefab: {fileID: 5541222334543047238, guid: 2673e4a593cdf70458e2febc2fcc2098, type: 3}

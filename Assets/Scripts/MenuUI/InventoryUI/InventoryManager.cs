@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager instance;
     //public List<WeaponData> allWeapons;
     //public GameDataBase dataBase;
     public Transform waeponContent;
@@ -35,12 +36,26 @@ public class InventoryManager : MonoBehaviour
     [Header("WarningPanel")]
     public GameObject warningPanel;
     public TextMeshProUGUI warningText;
+    [Header("Jugables")]
+    public CharacterData selectedCharacter;
+    public GameObject panelInventory;
 
     private void Start()
     {
         LoadWeapons();
         LoadCharacters();
         desequiparPopup.SetUp(this);
+    }
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void LoadWeapons()
@@ -69,9 +84,13 @@ public class InventoryManager : MonoBehaviour
             ShowWarning("Esa arma ya está equipada");
             return;
         }
-        if (weaponsEquipadas.Count >= 5)
+        int bestLevel = GameProgress.GetBestLevel();
+        print("bestLevel: " + bestLevel);
+        int maxSlot = SlotRules.GetSlotForLevel(bestLevel);
+
+        if(weaponsEquipadas.Count >= maxSlot)
         {
-            ShowWarning("No hay espacio para mas armas");
+            ShowWarning("No Hay Espacio Para Equipar Mas Armas");
             return;
         }
         weaponsEquipadas.Add(weapon);
@@ -131,6 +150,12 @@ public class InventoryManager : MonoBehaviour
 
     public void SelectCharacter(CharacterData character)
     {
+        if (!character.unlocked)
+        {
+            ShowWarning("Personaje Bloqueado");
+            return;
+        }
+        selectedCharacter = character;
         string a = "<color=yellow> ROL: </color> " + character.role;
         string b = "<color=yellow>GENERO: </color>: " + character.gender;
         string c = "<color=yellow>LORE:\n </color>" + character.lore;
@@ -143,7 +168,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Close()
     {
-        gameObject.SetActive(false);
+        panelInventory.SetActive(false);
     }
 
     public void ShowWarning(string message)

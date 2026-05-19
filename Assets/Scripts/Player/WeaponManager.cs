@@ -14,9 +14,10 @@ public class WeaponManager : MonoBehaviour
     [Header("Starting Weapon")]
     [SerializeField] private WeaponData startingWeapon;
 
-    [SerializeField] private int maxActiveSlots = 2;
+    [SerializeField] private int maxActiveSlots = 5;
 
     private OrbitalWeapons[] equipped;
+
 
     private void Awake()
     {
@@ -31,20 +32,13 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("WeaponManager START en: " + gameObject.name);
-
-        if (startingWeapon != null)
+        if (GameSession.selectedWeapons != null && GameSession.selectedWeapons.Count > 0)
         {
-            Debug.Log("StartingWeapon OK: " + startingWeapon.weaponName);
-            AddWeapon(startingWeapon, randomSlot: false);
-        }
-        else
-        {
-            Debug.LogError("startingWeapon es NULL");
+            LoadFromInventory(GameSession.selectedWeapons);
         }
     }
 
-    public bool AddWeapon(WeaponData data, bool randomSlot = true)
+    public bool AddWeapon(WeaponData data)
     {
         if (data == null) return false;
 
@@ -64,9 +58,7 @@ public class WeaponManager : MonoBehaviour
             return false;
         }
 
-        int slotIndex = randomSlot
-            ? emptySlots[Random.Range(0, emptySlots.Count)]
-            : emptySlots[0];
+        int slotIndex = emptySlots[0];
 
         OrbitalWeapons newWeapon = Instantiate(weaponsPrefab, slots[slotIndex]);
         newWeapon.transform.localPosition = Vector3.zero;
@@ -108,5 +100,61 @@ public class WeaponManager : MonoBehaviour
     public void SetMaxSlots(int amount)
     {
         maxActiveSlots = Mathf.Clamp(amount, 1, slots.Length);
+    }
+    /*
+    public void LaunchFirstWeapon()
+    {
+        for (int i = 0; i < equipped.Length; i++)
+        {
+            if (equipped[i] != null && equipped[i].IsReady)
+            {
+                equipped[i].Launch();
+                break;
+            }
+        }
+    }
+    */
+    public void LaunchSmartWeapon()
+    {
+        EnemyAcha[] enemies = FindObjectsOfType<EnemyAcha>();
+
+        if (enemies.Length == 0) return;
+
+        int enemyIndex = 0;
+
+        for (int i = 0; i < equipped.Length; i++)
+        {
+            if (equipped[i] != null && equipped[i].IsReady)
+            {
+                equipped[i].LaunchTo(enemies[enemyIndex].transform);
+
+                enemyIndex++;
+
+                if (enemyIndex >= enemies.Length)
+                    enemyIndex = 0;
+
+                break;
+            }
+        }
+    }
+    public void SpawnStartingWeapons(List<WeaponData> weapons)
+    {
+        if (weapons == null || weapons.Count == 0) return;
+
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            if (i >= maxActiveSlots) break;
+
+            AddWeapon(weapons[i]);
+        }
+    }
+
+    //Carga de armas del inventory al game core
+    public void LoadFromInventory(List<WeaponData> inventoryWeapons)
+    {
+        if(inventoryWeapons == null || inventoryWeapons.Count == 0)
+            return;
+
+        SpawnStartingWeapons(inventoryWeapons);
     }
 }

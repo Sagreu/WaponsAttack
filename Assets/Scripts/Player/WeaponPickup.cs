@@ -16,7 +16,7 @@ public class WeaponPickup : MonoBehaviour
 
         if (manager == null) return;
 
-        if (manager.AddWeapon(weaponData, true))
+        if (manager.AddWeapon(weaponData))
         {
             Destroy(gameObject);
         }

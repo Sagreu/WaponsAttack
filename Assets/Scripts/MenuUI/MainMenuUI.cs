@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject ScrolView;
     [SerializeField] private GameObject worldPanel;
     [SerializeField] private FadeTransition fadeTransition;
-    
+
 
 
     private void Start()
@@ -26,6 +27,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void PlayGame()
     {
+       
         SceneManager.LoadScene("GameCore");
     }
 
@@ -78,7 +80,7 @@ public class MainMenuUI : MonoBehaviour
     {
         SettingsPanel.SetActive(false);
         StorePanel.SetActive(false);
-        PlayersPanel.SetActive(false);
+        //PlayersPanel.SetActive(false);
     }
     IEnumerator Esperar()
     {

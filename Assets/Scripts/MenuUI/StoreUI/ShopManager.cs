@@ -28,14 +28,39 @@ public class ShopManager : MonoBehaviour
     [Header("PanelsWaepons")]
     public GameObject panelWaepons;
     public GameObject gachaPanel;
-    public GameObject ResultPanel;
+
     public Button Btn1;
     public Button Btn10;
     public InventoryManager inventory;
 
+    [Header("Show Waepons")]
+    public Image showWaeponImg;
+    public TextMeshProUGUI name;
+    public GameObject rareEfect;
+    public Button ResultPanel;
+    public Button closeSkip;
+    private ParticleSystem[] systems;
+    public ParticleSystem excludeParticle;
+    private bool multiPullMode = false;
+    public GameObject singlePanel;
+    [Header("References Multi Pull")]
+    public GameObject multiResultGrid;
+    public Transform gridContet;
+    public GameObject gridContetPrefab;
+
+    public Button closePanelWaepons;
+
+    bool canNextPull = true;
+
+
+    //lista para mostrar los resultados del gacha
+    public List<WeaponData> summonResult = new List<WeaponData>();
+    int indexRevelation = 0;
+
     private void Start()
     {
         LoadShop();
+
     }
 
     void LoadShop()
@@ -61,7 +86,7 @@ public class ShopManager : MonoBehaviour
             ShowWarning("Comprado: " + character.characterName);
 
             RefreshShop();
-           
+
             if (inventory != null)
                 inventory.RefreshCharacters();
         }
@@ -124,7 +149,10 @@ public class ShopManager : MonoBehaviour
 
     public void SummonWaepon()
     {
-
+        closePanelWaepons.gameObject.SetActive(false);
+        summonResult.Clear();
+        multiResultGrid.SetActive(false);
+        singlePanel.SetActive(true);
         if (!MonedaManager.instance.SpendRelic(100))
         {
             ShowWarning("No tienes Fragmentos suficientes");
@@ -138,12 +166,15 @@ public class ShopManager : MonoBehaviour
             int refund = GetDuplicateReward(reward);
             MonedaManager.instance.AddGold(refund);
             ShowWarning($"Waepon repited:<color=yellow> +{refund} </color> oro obtenido");
+
         }
         else
         {
             reward.unlocked = true;
             ShowWarning("Obtuviste: " + reward.weaponName);
         }
+        summonResult.Add(reward);
+        ShowSinglePull(reward);
 
     }
 
@@ -210,18 +241,29 @@ public class ShopManager : MonoBehaviour
 
     public void SummonTenWaepons()
     {
+        multiPullMode = true;
+        closePanelWaepons.gameObject.SetActive(false);
+        closeSkip.gameObject.SetActive(true);
         if (!MonedaManager.instance.SpendRelic(900))
         {
             ShowWarning("Fondos Insuficientes");
             return;
         }
-        for(int i = 0; i <10; i++)
+        summonResult.Clear();
+        singlePanel.SetActive(true);
+        multiResultGrid.SetActive(false);
+        foreach (Transform child in gridContet)
+        {
+            Destroy(child.gameObject);
+        }
+        for (int i = 0; i < 10; i++)
         {
             WeaponData reward = GetRandomWaepon();
 
             if (reward == null)
                 continue;
 
+            summonResult.Add(reward);
             if (reward.unlocked)
             {
                 int refund = GetDuplicateReward(reward);
@@ -233,7 +275,160 @@ public class ShopManager : MonoBehaviour
                 reward.unlocked = true;
                 Debug.Log($"Tirada {i + 1}: {reward.weaponName}  Raririty:  {reward.rarity.ToString()}");
             }
+
         }
         ShowWarning("Tirada x10 completada");
+        Debug.Log("Total guardadas: " + summonResult.Count);
+        indexRevelation = 0;
+        ResultPanel.gameObject.SetActive(true);
+        ShowNextPull();
+    }
+
+    public void ShowSinglePull(WeaponData weapon)
+    {
+        canNextPull = false;
+        multiPullMode = false;
+        closeSkip.gameObject.SetActive(false);
+        ResultPanel.gameObject.SetActive(true);
+        StartCoroutine(ShowWaeponReveal(weapon));
+
+    }
+
+    IEnumerator ShowWaeponReveal(WeaponData weapon)
+    {
+        showWaeponImg.sprite = weapon.sprite;
+        name.text = weapon.weaponName;
+
+        ChangeEffectColor(weapon.rarity);
+        rareEfect.SetActive(true);
+
+        Color imgColor = showWaeponImg.color;
+        Color textColor = name.color;
+
+        imgColor.a = 0;
+        textColor.a = 0;
+        showWaeponImg.color = imgColor;
+        name.color = textColor;
+
+        yield return new WaitForSeconds(0.5f);
+
+        float time = 0f;
+        float duration = 0.35f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float alpha = time / duration;
+            imgColor.a = alpha;
+            textColor.a = alpha;
+
+            showWaeponImg.color = imgColor;
+            name.color = textColor;
+            yield return null;
+        }
+
+        imgColor.a = 1;
+        textColor.a = 1;
+
+        showWaeponImg.color = imgColor;
+        name.color = textColor;
+        canNextPull = true;
+    }
+    public void CloseSingleButton()
+    {
+        ResultPanel.gameObject.SetActive(false);
+        closePanelWaepons.gameObject.SetActive(true);
+    }
+    public void ChangeEffectColor(WaeponRaririty rarity)
+    {
+        systems = rareEfect.GetComponentsInChildren<ParticleSystem>();
+        Color color = Color.white;
+
+        switch (rarity)
+        {
+            case WaeponRaririty.Common:
+                color = Color.gray;
+                break;
+            case WaeponRaririty.Rare:
+                color = Color.blue;
+                break;
+            case WaeponRaririty.Epic:
+                color = new Color(0.6f, 0f, 1f);
+                break;
+            case WaeponRaririty.Legendary:
+                color = Color.red;
+                break;
+            case WaeponRaririty.Mythic:
+                color = Color.yellow;
+                break;
+            default:
+                color = Color.white;
+                break;
+
+        }
+        foreach (ParticleSystem particle in systems)
+        {
+            particle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            particle.Play();
+            if (particle == excludeParticle)
+                continue;
+            var main = particle.main;
+            main.startColor = color;
+        }
+    }
+
+    public void ShowNextPull()
+    {
+        if (!canNextPull)
+            return;
+        canNextPull = false;
+
+        if (indexRevelation >= summonResult.Count)
+        {
+            ShowMultiResult();
+            return;
+        }
+        WeaponData weapon = summonResult[indexRevelation];
+        StartCoroutine(ShowWaeponReveal(weapon));
+        indexRevelation++;
+    }
+    public void HandResultClick()
+    {
+        if (!canNextPull)
+            return;
+
+        if (multiPullMode)
+            ShowNextPull();
+        else
+            CloseSingleButton();
+    }
+
+    public void ShowMultiResult()
+    {
+
+        singlePanel.SetActive(false);
+        multiResultGrid.SetActive(true);
+        foreach (Transform child in gridContet)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (WeaponData weapon in summonResult)
+        {
+            GameObject obj = Instantiate(gridContetPrefab, gridContet);
+            ResultSlotUI slot = obj.GetComponent<ResultSlotUI>();
+
+            slot.Setup(weapon);
+        }
+        multiPullMode = false;
+        closeSkip.gameObject.SetActive(false);
+    }
+    public void CloseMultiResult()
+    {
+        ResultPanel.gameObject.SetActive(false);
+        closePanelWaepons.gameObject.SetActive(true);
+    }
+    public void CloseWaeponRelicPanel()
+    {
+        panelWaepons.SetActive(false);
     }
 }
