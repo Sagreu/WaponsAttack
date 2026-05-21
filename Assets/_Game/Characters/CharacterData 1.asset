@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d07c03414253c4c97d76a6e390bf56, type: 3}
+  m_Name: CharacterData 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterId: 2
+  characterName: Selene Varkhiel
+  lore: "Una antigua vampira que abandon\xF3 su clan despu\xE9s de una guerra interna.
+    Ahora caza criaturas nocturnas usando una espada maldita alimentada por sangre
+    enemiga."
+  gender: Femenino
+  role: Duelista Sangrienta
+  icon: {fileID: 21300000, guid: 2cde22c884417d44e8c8d1fccfc3823d, type: 3}
+  portrait: {fileID: 21300000, guid: 2cde22c884417d44e8c8d1fccfc3823d, type: 3}
+  unlocked: 0
+  priceGold: 5000
+  purchased: 0
+  prefab: {fileID: 5541222334543047238, guid: ca1553d617497604c894e4a3deff5751, type: 3}

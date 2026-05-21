@@ -10,7 +10,7 @@ public class BossUIManager : MonoBehaviour
     [SerializeField] private Slider slider;
     private void Start()
     {
-        panelBott.SetActive(false);
+        slider.gameObject.SetActive(false);
     }
     private void Awake()
     {

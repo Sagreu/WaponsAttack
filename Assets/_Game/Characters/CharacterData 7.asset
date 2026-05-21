@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d07c03414253c4c97d76a6e390bf56, type: 3}
+  m_Name: CharacterData 7
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterId: 8
+  characterName: Azryel
+  lore: "Fue creada para liderar ej\xE9rcitos infernales, pero ahora vaga sola buscando
+    rivales dignos."
+  gender: Femenino
+  role: Caballera del Caos
+  icon: {fileID: 21300000, guid: d3ab0c67f8a018b4e9b3c85c70012e3e, type: 3}
+  portrait: {fileID: 21300000, guid: d3ab0c67f8a018b4e9b3c85c70012e3e, type: 3}
+  unlocked: 0
+  priceGold: 17000
+  purchased: 0
+  prefab: {fileID: 5541222334543047238, guid: 6204ed6def2c95e43b76a9ca1cf83896, type: 3}

@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: b54bc8791a4dafa479f30d50585884b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6509554961952020864
+    second: Group 242_0
+  - first:
+      213: -8373604353986576756
+    second: Group 242_1
+  - first:
+      213: -2004985669975481541
+    second: Group 242_2
+  - first:
+      213: 2920480101925108421
+    second: Group 242_3
+  - first:
+      213: -7441981607065736114
+    second: Group 242_4
+  - first:
+      213: -7140031706719529073
+    second: Group 242_5
+  - first:
+      213: 8216179386194923672
+    second: Group 242_6
+  - first:
+      213: -4335192638639953126
+    second: Group 242_7
+  - first:
+      213: 9078134105776543156
+    second: Group 242_8
+  - first:
+      213: -7547584441254797677
+    second: Group 242_9
+  - first:
+      213: -8420448712081452909
+    second: Group 242_10
+  - first:
+      213: -2944129413376891012
+    second: Group 242_11
+  - first:
+      213: 3628077968121207172
+    second: Group 242_12
+  - first:
+      213: -7319725011097106642
+    second: Group 242_13
+  - first:
+      213: -7254388540297896942
+    second: Group 242_14
+  - first:
+      213: 4292382924199838106
+    second: Group 242_15
+  - first:
+      213: 752728099378074706
+    second: Group 242_16
+  - first:
+      213: -961735689819281894
+    second: Group 242_17
+  - first:
+      213: -2009777175057703224
+    second: Group 242_18
+  - first:
+      213: 5190540880410713993
+    second: Group 242_19
+  - first:
+      213: -5608459541874128653
+    second: Group 242_20
+  - first:
+      213: -4000174668031697009
+    second: Group 242_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Icon_Money
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0891801bfb5965a50800000000000000
+      internalID: 6509554961952020864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_StonePurple
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e37fe843bfacb80800000000000000
+      internalID: -8373604353986576756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_StoneRed
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33ec51f72cdc24e0800000000000000
+      internalID: -2004985669975481541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_StoneGreen
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cab7d8ed21a78820800000000000000
+      internalID: 2920480101925108421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Wood
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c2bdd5825c8b890800000000000000
+      internalID: -7441981607065736114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Scroll
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87d4f30ef289ec90800000000000000
+      internalID: -7140031706719529073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Scull
+      rect:
+        serializedVersion: 2
+        x: 3198
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 890190dde9bb50270800000000000000
+      internalID: 8216179386194923672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_PotionGreen
+      rect:
+        serializedVersion: 2
+        x: 3731
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b2af4934d46d3c0800000000000000
+      internalID: -4335192638639953126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_PotionRed
+      rect:
+        serializedVersion: 2
+        x: 4264
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b55b260fd20cfd70800000000000000
+      internalID: 9078134105776543156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Map
+      rect:
+        serializedVersion: 2
+        x: 4797
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e1eb280f7914790800000000000000
+      internalID: -7547584441254797677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Cup
+      rect:
+        serializedVersion: 2
+        x: 5330
+        y: 524
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3905df2828e842b80800000000000000
+      internalID: -8420448712081452909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Shield
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7724eea5e95427d0800000000000000
+      internalID: -2944129413376891012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Sword
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489194b80b5895230800000000000000
+      internalID: 3628077968121207172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Axe
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27c30c42ec1b6a90800000000000000
+      internalID: -7319725011097106642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Backpack
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c11e8de0c335b90800000000000000
+      internalID: -7254388540297896942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Helmet
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9142ec078b919b30800000000000000
+      internalID: 4292382924199838106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Armor
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25492efd73a327a00800000000000000
+      internalID: 752728099378074706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Pants
+      rect:
+        serializedVersion: 2
+        x: 3198
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16a1805c7a37a2f0800000000000000
+      internalID: -961735689819281894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Boots
+      rect:
+        serializedVersion: 2
+        x: 3731
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce5ffabe46db14e0800000000000000
+      internalID: -2009777175057703224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Ring
+      rect:
+        serializedVersion: 2
+        x: 4264
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f16091e61880840800000000000000
+      internalID: 5190540880410713993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Book
+      rect:
+        serializedVersion: 2
+        x: 4797
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f84175f2cfba22b0800000000000000
+      internalID: -5608459541874128653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Chest
+      rect:
+        serializedVersion: 2
+        x: 5330
+        y: 0
+        width: 533
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f547055568c78c0800000000000000
+      internalID: -4000174668031697009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9833fd1cd652bdc44983587466734e60
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":2.0},"gridSpriteSize":{"x":533.0,"y":524.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      C: -8420448712081452909
+      Icon_Armor: 752728099378074706
+      Icon_Axe: -7319725011097106642
+      Icon_Backpack: -7254388540297896942
+      Icon_Book: -5608459541874128653
+      Icon_Boots: -2009777175057703224
+      Icon_Chest: -4000174668031697009
+      Icon_Cup: -8420448712081452909
+      Icon_Helmet: 4292382924199838106
+      Icon_Map: -7547584441254797677
+      Icon_Money: 6509554961952020864
+      Icon_Pants: -961735689819281894
+      Icon_PotionGreen: -4335192638639953126
+      Icon_PotionRed: 9078134105776543156
+      Icon_RedSton: -2004985669975481541
+      Icon_Ring: 5190540880410713993
+      Icon_Scroll: -7140031706719529073
+      Icon_Scull: 8216179386194923672
+      Icon_Shield: -2944129413376891012
+      Icon_StoneGreen: 2920480101925108421
+      Icon_StonePurple: -8373604353986576756
+      Icon_StoneRed: -2004985669975481541
+      Icon_Sword: 3628077968121207172
+      Icon_Wood: -7441981607065736114
+      Scull: -4335192638639953126
+      "\0\0": -8420448712081452909
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 362678
+  packageName: Gothic UI Kit
+  packageVersion: 1.0.0
+  assetPath: Assets/KissMyAssets/Gothic UI Kit/Art/Sprites/Icons/Colour_Icons.png
+  uploadId: 902614

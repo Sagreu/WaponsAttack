@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d07c03414253c4c97d76a6e390bf56, type: 3}
+  m_Name: CharacterData 8
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterId: 9
+  characterName: Helena Crow
+  lore: "Sobrevivi\xF3 sola en bosques infestados de monstruos usando un gigantesco
+    martillo de guerra."
+  gender: Femenino
+  role: Cazadora de Bestias
+  icon: {fileID: 21300000, guid: 901bedd8bfa3302438211c3416f97efc, type: 3}
+  portrait: {fileID: 21300000, guid: 901bedd8bfa3302438211c3416f97efc, type: 3}
+  unlocked: 0
+  priceGold: 19000
+  purchased: 0
+  prefab: {fileID: 5541222334543047238, guid: d8d0cee73b50dbb48b9abfd3373c670a, type: 3}

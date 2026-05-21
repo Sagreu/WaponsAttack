@@ -16,7 +16,7 @@ public class Waepon : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rigidbody2D.MoveRotation(rigidbody2D.rotation - rotationSpeed * Time.fixedDeltaTime);
+       // rigidbody2D.MoveRotation(rigidbody2D.rotation - rotationSpeed * Time.fixedDeltaTime);
 
 
     }
