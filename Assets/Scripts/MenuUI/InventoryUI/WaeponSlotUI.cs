@@ -9,6 +9,7 @@ public class WaeponSlotUI : MonoBehaviour
     public TextMeshProUGUI name;
     public TextMeshProUGUI description;
     public Button button;
+    public Sprite marcoSprite;
 
     WeaponData weapon;
     InventoryManager inventory;
@@ -18,7 +19,7 @@ public class WaeponSlotUI : MonoBehaviour
         weapon = data;
         inventory = manager;
         icon.sprite = data.sprite;
-        marco.sprite = data.marco;
+        marco.sprite = marcoSprite;
         name.text = data.weaponName;
         description.text = data.description;
 

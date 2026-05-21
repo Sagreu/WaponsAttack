@@ -87,8 +87,10 @@ public class ShopManager : MonoBehaviour
 
             RefreshShop();
 
-            if (inventory != null)
-                inventory.RefreshCharacters();
+            if (InventoryManager.instance != null)
+            {
+                InventoryManager.instance.RefreshCharacters();
+            }
         }
         else
         {

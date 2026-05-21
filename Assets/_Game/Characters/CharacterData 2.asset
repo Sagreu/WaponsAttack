@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: CharacterData 2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterId: 3
-  characterName: TRISPADOS
-  lore: dadadadadsaasadasda
-  gender: MASCULINO
-  role: ASESINO
-  icon: {fileID: 21300000, guid: c0c3d8819bcd8484f809b41ef8f32fc8, type: 3}
-  portrait: {fileID: 21300000, guid: c0c3d8819bcd8484f809b41ef8f32fc8, type: 3}
-  unlocked: 1
-  priceGold: 1500
-  purchased: 1
+  characterName: Nyxra
+  lore: "Demonio nacida en un reino de fuego eterno. Pelea con una enorme guada\xF1a
+    y disfruta el caos del combate cercano."
+  gender: Femenino
+  role: Berserker Infernal
+  icon: {fileID: 21300000, guid: 3328649dbc6596d4797258b617e2ccd7, type: 3}
+  portrait: {fileID: 21300000, guid: 3328649dbc6596d4797258b617e2ccd7, type: 3}
+  unlocked: 0
+  priceGold: 7000
+  purchased: 0
+  prefab: {fileID: 5541222334543047238, guid: 0ae0151157af3bb448493071cd43fd3a, type: 3}

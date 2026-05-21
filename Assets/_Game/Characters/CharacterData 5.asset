@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d07c03414253c4c97d76a6e390bf56, type: 3}
+  m_Name: CharacterData 5
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterId: 6
+  characterName: Erika Valen
+  lore: "Antigua guardia imperial que abandon\xF3 el reino despu\xE9s de descubrir
+    corrupci\xF3n dentro de la corona."
+  gender: Femenino
+  role: Espadachina Real
+  icon: {fileID: 21300000, guid: 74ce1ca81d8179748a0d52694e10afb1, type: 3}
+  portrait: {fileID: 21300000, guid: 74ce1ca81d8179748a0d52694e10afb1, type: 3}
+  unlocked: 0
+  priceGold: 13000
+  purchased: 0
+  prefab: {fileID: 5541222334543047238, guid: 1df640711cdb18c4b92f7175de1eef9a, type: 3}

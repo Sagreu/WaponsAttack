@@ -303,8 +303,8 @@ GameObject:
   - component: {fileID: 3052551142574066232}
   - component: {fileID: 7456781158970794619}
   - component: {fileID: 1796711450310241380}
-  - component: {fileID: 6245088665854683097}
   - component: {fileID: 6810613460823806499}
+  - component: {fileID: 6925743755234892498}
   m_Layer: 6
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -403,6 +403,7 @@ MonoBehaviour:
   playerInput: {fileID: 8181688121737840415}
   rigidbody: {fileID: 3274407067575170754}
   fuerzaMovimiento: 5
+  animator: {fileID: 0}
 --- !u!50 &3274407067575170754
 Rigidbody2D:
   serializedVersion: 5
@@ -605,7 +606,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49677bd6d145314bb91265d1616eac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ysort
---- !u!95 &6245088665854683097
+--- !u!114 &6810613460823806499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541222334543047238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92c6b1ebbf3ac5419d018535be76ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealtPlayers
+  vidaTotal: 100
+  vidaActual: 0
+  barraVida: {fileID: 0}
+--- !u!95 &6925743755234892498
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -627,21 +643,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6810613460823806499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5541222334543047238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b92c6b1ebbf3ac5419d018535be76ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealtPlayers
-  vidaTotal: 100
-  vidaActual: 0
-  barraVida: {fileID: 0}
 --- !u!1 &5711316242548157054
 GameObject:
   m_ObjectHideFlags: 0
