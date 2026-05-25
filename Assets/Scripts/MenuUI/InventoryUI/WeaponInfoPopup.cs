@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class WeaponInfoPopup : MonoBehaviour
@@ -24,22 +25,14 @@ public class WeaponInfoPopup : MonoBehaviour
     {
         gameObject.SetActive(true);
         selectedWeapon = weapon;
-        string a;
-        if (weapon.lifeTime == 0)
-        {
-            a = "Permanente";
-        }
-        else
-        {
-            a = weapon.lifeTime.ToString() + " s.";
-        }
+
+        string a = "<color=yellow>" + weapon.weaponName + "</color> ";
+        string b = "<color=yellow> Raresa: </color>" + weapon.rarity.ToString();
         icon.sprite = weapon.sprite;
-        name.text = weapon.weaponName;
-        stats.text = "Daño: " + weapon.damage + "\n" +
-              "Durabilidad: " + weapon.durability + "\n" +
-              "Tiempo De vida: " + a;
+        name.text = a;
+        stats.text = "<color=yellow> Daño: </color> " + weapon.damage + "\n";
         history.text = weapon.history;
-        rareza.text = weapon.rarity.ToString();
+        rareza.text = b;
     }
 
     void ClosePopup()

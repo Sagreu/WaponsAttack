@@ -8,31 +8,21 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
-    //public List<CharacterData> allCharacters;
     public GameDataBase dataBase;
-
     public Transform content;
     public GameObject characterPrefab;
     [Header("Botones Tiendas")]
     public Button character;
     public Button waepons;
-    public Button closeStore;
     public Button closeCharacterStore;
-    public GameObject characterPanel;
-    //public GameObject waeponsPanel;
-    public GameObject showCharactersAdnWaepons;
     [Header("WarningPanel")]
     public GameObject warningPanel;
     public TextMeshProUGUI warningText;
-
     [Header("PanelsWaepons")]
-    public GameObject panelWaepons;
     public GameObject gachaPanel;
-
     public Button Btn1;
     public Button Btn10;
     public InventoryManager inventory;
-
     [Header("Show Waepons")]
     public Image showWaeponImg;
     public TextMeshProUGUI name;
@@ -47,19 +37,32 @@ public class ShopManager : MonoBehaviour
     public GameObject multiResultGrid;
     public Transform gridContet;
     public GameObject gridContetPrefab;
-
     public Button closePanelWaepons;
-
     bool canNextPull = true;
-
-
-    //lista para mostrar los resultados del gacha
     public List<WeaponData> summonResult = new List<WeaponData>();
     int indexRevelation = 0;
+
+    [Header("Global Pools")]
+    [SerializeField] private List<WeaponData> commonWeapons;
+    [SerializeField] private List<WeaponData> rareWeapons;
+    [SerializeField] private List<WeaponData> epicWeapons;
+    [Header("Banner System")]
+    [SerializeField] private List<WeaponDataBanner> allWeaponDataBanner;
+    [SerializeField] private Transform bannerContent;
+    [SerializeField] GameObject bannerPrefab;
+    [SerializeField] private WeaponDataBanner currentBanner;
+    [SerializeField] WeaponDataBanner defaultBanner;
+    [Header("Current Banner UI")]
+    [SerializeField] private Image currentBannerImage;
+    [SerializeField] private TextMeshProUGUI currentBannerName;
+    [SerializeField] private TextMeshProUGUI currentBannerSerie;
+    [SerializeField] private TextMeshProUGUI currentBannerDescription;
 
     private void Start()
     {
         LoadShop();
+        LoadBanners();
+        SelectBanner(defaultBanner);
 
     }
 
@@ -107,31 +110,6 @@ public class ShopManager : MonoBehaviour
         LoadShop();
     }
 
-    public void ShowCharacterPanel()
-    {
-        showCharactersAdnWaepons.SetActive(false);
-        closeStore.gameObject.SetActive(false);
-        characterPanel.SetActive(true);
-    }
-    public void ShowWaeponsPanel()
-    {
-        panelWaepons.SetActive(true);
-    }
-    public void ClosePanels()
-    {
-        characterPanel.SetActive(false);
-        panelWaepons.SetActive(false);
-        showCharactersAdnWaepons.SetActive(false);
-        gameObject.SetActive(false);
-
-    }
-    public void CloseCharacterPanel()
-    {
-        characterPanel.SetActive(false);
-        closeStore.gameObject.SetActive(true);
-
-        showCharactersAdnWaepons.SetActive(true);
-    }
 
     public void ShowWarning(string message)
     {
@@ -429,8 +407,26 @@ public class ShopManager : MonoBehaviour
         ResultPanel.gameObject.SetActive(false);
         closePanelWaepons.gameObject.SetActive(true);
     }
-    public void CloseWaeponRelicPanel()
+
+    void LoadBanners()
     {
-        panelWaepons.SetActive(false);
+        foreach (var banner in allWeaponDataBanner)
+        {
+            GameObject obj = Instantiate(bannerPrefab, bannerContent);
+
+            obj.GetComponent<BannerSlotUI>().setUp(banner, this);
+        }
     }
+
+    public void SelectBanner(WeaponDataBanner banner)
+    {
+        currentBanner = banner;
+
+        currentBannerImage.sprite = currentBanner.bannerImage;
+        currentBannerName.text = currentBanner.bannerName;
+        currentBannerSerie.text = currentBanner.serie;
+        //currentBannerDescription.text = currentBanner.description;
+
+    }
+
 }

@@ -19,7 +19,9 @@ MonoBehaviour:
   gender: Femenino
   role: Samurai Errante
   icon: {fileID: 21300000, guid: 278d5ac6d55bc3f4dae36a03e0edc7fd, type: 3}
-  portrait: {fileID: 21300000, guid: 278d5ac6d55bc3f4dae36a03e0edc7fd, type: 3}
+  portrait: {fileID: 3411773943492709812, guid: 04b216f269f3bee46b19cd08ae52ef90, type: 3}
+  tienda: {fileID: 6261014156055813829, guid: c5e8ceb4aa4528f4eb356a4ef980b170, type: 3}
+  sombraTienda: {fileID: 6261014156055813829, guid: c5e8ceb4aa4528f4eb356a4ef980b170, type: 3}
   unlocked: 0
   priceGold: 15000
   purchased: 0

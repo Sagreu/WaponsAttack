@@ -11,10 +11,13 @@ public class CharacterData : ScriptableObject
 
     public Sprite icon;
     public Sprite portrait;
+    public Sprite tienda;
+    public Sprite sombraTienda;
 
     public bool unlocked;
 
     public int priceGold;
     public bool purchased;
     public GameObject prefab;
+
 }

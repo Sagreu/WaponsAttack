@@ -10,6 +10,7 @@ public class CharacterStoreSlotUI : MonoBehaviour
     public TextMeshProUGUI cost;
     public Button buyButton;
     public GameObject lockedOverlay;
+    public Image sombraCharacter;
 
     CharacterData characterData;
     ShopManager shopManager;
@@ -19,11 +20,13 @@ public class CharacterStoreSlotUI : MonoBehaviour
         characterData = data;
         shopManager = manager;
 
-        characterImage.sprite = characterData.icon;
+        characterImage.sprite = characterData.tienda;
+        sombraCharacter.sprite = characterData.sombraTienda;
+
         name.text = characterData.characterName;
         cost.text = characterData.priceGold.ToString();
 
-        lockedOverlay.SetActive(characterData.purchased);
+        lockedOverlay.SetActive(!characterData.purchased);
 
         buyButton.gameObject.SetActive(!characterData.purchased);
         buyButton.onClick.RemoveAllListeners();

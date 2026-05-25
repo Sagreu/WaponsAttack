@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3745ad044cd8ef43884a7abc236c7d6, type: 3}
+  m_Name: New Weapon Data Banner
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponDataBanner
+  Id: 2
+  bannerName: Elemento Viento
+  description: Forjadas con las partes de aves Raks
+  serie: Serie Elemental de Viento
+  bannerImage: {fileID: 7403718101583450526, guid: 3b5f1449fcf319844adfa250d7025a28, type: 3}
+  legendaryWeapons: []
+  mythicWeapons: []

@@ -19,7 +19,9 @@ MonoBehaviour:
   gender: Femenino
   role: Caballera del Caos
   icon: {fileID: 21300000, guid: d3ab0c67f8a018b4e9b3c85c70012e3e, type: 3}
-  portrait: {fileID: 21300000, guid: d3ab0c67f8a018b4e9b3c85c70012e3e, type: 3}
+  portrait: {fileID: -7465940805643393303, guid: fa9dc1f9a9d42f4488e9a4388e8803eb, type: 3}
+  tienda: {fileID: 845766759399967436, guid: 76ca0846bf1350a4a85d9f2f1ffbf1d1, type: 3}
+  sombraTienda: {fileID: 845766759399967436, guid: 76ca0846bf1350a4a85d9f2f1ffbf1d1, type: 3}
   unlocked: 0
   priceGold: 17000
   purchased: 0

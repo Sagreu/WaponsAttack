@@ -19,7 +19,9 @@ MonoBehaviour:
   gender: Femenino
   role: Espadachina Real
   icon: {fileID: 21300000, guid: 74ce1ca81d8179748a0d52694e10afb1, type: 3}
-  portrait: {fileID: 21300000, guid: 74ce1ca81d8179748a0d52694e10afb1, type: 3}
+  portrait: {fileID: 4378407228172769946, guid: 484a5b038866cc943b851ccb67b56eb4, type: 3}
+  tienda: {fileID: -7480007059792476848, guid: 0cf5e2cb066c3354fb23842ce50e5076, type: 3}
+  sombraTienda: {fileID: -7480007059792476848, guid: 0cf5e2cb066c3354fb23842ce50e5076, type: 3}
   unlocked: 0
   priceGold: 13000
   purchased: 0

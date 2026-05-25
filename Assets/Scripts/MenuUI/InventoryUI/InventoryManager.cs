@@ -51,8 +51,9 @@ public class InventoryManager : MonoBehaviour
         LoadWeapons();
         LoadCharacters();
         LoadEquippedWeapons();
-      //  LoadSelectedCharacter();
+        //  LoadSelectedCharacter();
         desequiparPopup.SetUp(this);
+        RefreshSlots();
 
     }
     private void Awake()
@@ -103,13 +104,22 @@ public class InventoryManager : MonoBehaviour
             return;
         }
         weaponsEquipadas.Add(weapon);
+        ShowWarning("Arma equipada: " +  weapon.weaponName);
         SaveEquippedWeapons();
-        Debug.Log("Equipada. Total: " + weaponsEquipadas.Count);
+        
         RefreshSlots();
     }
 
     void RefreshSlots()
     {
+        for (int i = 0; i < slotsEquipados.Count; i++)
+        {
+            slotsEquipados[i].sprite = null;
+            slotsEquipados[i].enabled = false;
+
+            botonesSlots[i].onClick.RemoveAllListeners();
+        }
+
         for (int i = 0; i < slotsEquipados.Count; i++)
         {
             int index = i;
@@ -140,7 +150,7 @@ public class InventoryManager : MonoBehaviour
         if (index < 0 || index >= weaponsEquipadas.Count)
             return;
 
-        Debug.Log("Quitando: " + weaponsEquipadas[index].weaponName);
+        ShowWarning("Quitando: " + weaponsEquipadas[index].weaponName);
 
         weaponsEquipadas.RemoveAt(index);
         SaveEquippedWeapons();
@@ -188,12 +198,12 @@ public class InventoryManager : MonoBehaviour
         PlayerPrefs.SetInt(SltCharacter, character.characterId);
         PlayerPrefs.Save();
         string a = "<color=yellow> ROL: </color> " + character.role;
-        string b = "<color=yellow>GENERO: </color>: " + character.gender;
+        string b = "<color=yellow>GENERO: </color> " + character.gender;
         string c = "<color=yellow>LORE:\n </color>" + character.lore;
         centerCharacterImage.sprite = character.icon;
         bg.sprite = character.portrait;
         centerName.text = character.characterName;
-        centerGeneret.text = b;
+        //centerGeneret.text = b;
         centerRol.text = a;
         centerLore.text = c;
     }

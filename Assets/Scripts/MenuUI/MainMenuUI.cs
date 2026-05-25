@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
     [Header("Panels")]
     [SerializeField] private GameObject LevelConteiner;
     [SerializeField] private GameObject SettingsPanel;
-    [Header("StorePanels")]
-    [SerializeField] private GameObject StorePanel;
+
     [SerializeField] private GameObject characterAndWaeponsPanel;
     [Header("PlayersPanel")]
     [SerializeField] private GameObject PlayersPanel;
@@ -17,6 +17,13 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject ScrolView;
     [SerializeField] private GameObject worldPanel;
     [SerializeField] private FadeTransition fadeTransition;
+
+    [Header("REFERENCIAL STORE PANELS")]
+    [SerializeField] private GameObject StorePanel;
+    public GameObject characterPanel;
+    public GameObject panelWaepons;
+    public GameObject showCharactersAdnWaepons;
+    public Button closeStore;
 
 
 
@@ -27,7 +34,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void PlayGame()
     {
-       
+
         SceneManager.LoadScene("GameCore");
     }
 
@@ -48,12 +55,14 @@ public class MainMenuUI : MonoBehaviour
         AllClousePanelns();
         StorePanel.SetActive(true);
         characterAndWaeponsPanel.SetActive(true);
+        closeStore.gameObject.SetActive(true);
+
     }
     //vamos aqui
     public void OpenPlayer()
     {
         //AllClousePanelns();
-        if(worldPanel.active == true)
+        if (worldPanel.active == true)
         {
             worldPanel.SetActive(false);
         }
@@ -64,7 +73,7 @@ public class MainMenuUI : MonoBehaviour
         fadeTransition.fadeToZonas();
         StartCoroutine(Esperar());
     }
-    
+
     public void CloseZonesView()
     {
         //fadeTransition.fadeToZonas();
@@ -86,7 +95,7 @@ public class MainMenuUI : MonoBehaviour
     {
         float esperar = 0.5f;
 
-       yield return new WaitForSeconds(esperar);
+        yield return new WaitForSeconds(esperar);
         worldPanel.SetActive(true);
         ScrolView.SetActive(true);
     }
@@ -107,5 +116,40 @@ public class MainMenuUI : MonoBehaviour
         fadeTransition.fadeToHome();
         StartCoroutine(CerrarTodo());
 
+    }
+
+    public void ClosePanelsStore()
+    {
+        characterPanel.SetActive(false);
+        panelWaepons.SetActive(false);
+        showCharactersAdnWaepons.SetActive(false);
+        StorePanel.SetActive(false);
+        closeStore.gameObject.SetActive(false);
+
+    }
+
+    public void CloseCharacterPanel()
+    {
+        characterPanel.SetActive(false);
+        closeStore.gameObject.SetActive(true);
+
+        showCharactersAdnWaepons.SetActive(true);
+    }
+
+    public void ShowCharacterPanel()
+    {
+        showCharactersAdnWaepons.SetActive(false);
+        closeStore.gameObject.SetActive(false);
+        characterPanel.SetActive(true);
+    }
+
+    public void ShowWaeponsPanel()
+    {
+        panelWaepons.SetActive(true);
+    }
+
+    public void CloseWaeponRelicPanel()
+    {
+        panelWaepons.SetActive(false);
     }
 }

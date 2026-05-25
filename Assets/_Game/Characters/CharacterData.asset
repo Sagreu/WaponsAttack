@@ -20,6 +20,8 @@ MonoBehaviour:
   role: Exploradora Felina
   icon: {fileID: 21300000, guid: 4713e8a65a98eb8428e5e1281b3d9bbf, type: 3}
   portrait: {fileID: -8848955495395853425, guid: 9012f36a97b23e04c809d6d57a38955a, type: 3}
+  tienda: {fileID: 1745246856392609454, guid: c1291d61d079521409af995fcfe32e14, type: 3}
+  sombraTienda: {fileID: 1745246856392609454, guid: c1291d61d079521409af995fcfe32e14, type: 3}
   unlocked: 1
   priceGold: 0
   purchased: 1
