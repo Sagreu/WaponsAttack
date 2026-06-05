@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using NUnit.Framework;
 using TMPro;
+using TMPro.Examples;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,6 +35,14 @@ public class ShopManager : MonoBehaviour
     public ParticleSystem excludeParticle;
     private bool multiPullMode = false;
     public GameObject singlePanel;
+    public Image iconElemental;
+    public Image ui1;
+    public Image ui2;
+    public Image ui3;
+    public Image rareImg;
+    public TextMeshProUGUI bannerNameText;
+
+
     [Header("References Multi Pull")]
     public GameObject multiResultGrid;
     public Transform gridContet;
@@ -57,6 +67,19 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentBannerName;
     [SerializeField] private TextMeshProUGUI currentBannerSerie;
     [SerializeField] private TextMeshProUGUI currentBannerDescription;
+    [SerializeField] private TextMeshProUGUI currentBannerInitialDescription;
+    [Header("BANNER DETAILS REFERENCES")]
+    [SerializeField] private Button infoDetails;
+    [SerializeField] private Button closeDetails;
+    [SerializeField] private GameObject detailsBannerPanel;
+    [SerializeField] private Image bannerImageDetails;
+    [SerializeField] private TextMeshProUGUI nameBannerDetails;
+    [SerializeField] private TextMeshProUGUI serieBannerDetails;
+    [SerializeField] private TextMeshProUGUI loreDetails;
+    [SerializeField] private Transform bannerDetailContect;
+    [SerializeField] private GameObject weaponBannerDetails;
+    [Header("Animacion")]
+    [SerializeField] private SummonAnimationController summonAnimation;
 
     private void Start()
     {
@@ -113,7 +136,7 @@ public class ShopManager : MonoBehaviour
 
     public void ShowWarning(string message)
     {
-        StopAllCoroutines();
+        //StopAllCoroutines();
         StartCoroutine(ShowWarningCorutine(message));
     }
 
@@ -126,17 +149,22 @@ public class ShopManager : MonoBehaviour
 
         warningPanel.SetActive(false);
     }
-
     public void SummonWaepon()
     {
+        StartCoroutine(SummonWaeponRoutine());
+    }
+    private IEnumerator SummonWaeponRoutine()
+    {
+        string warningMessage = "";
         closePanelWaepons.gameObject.SetActive(false);
         summonResult.Clear();
         multiResultGrid.SetActive(false);
         singlePanel.SetActive(true);
+
         if (!MonedaManager.instance.SpendRelic(100))
         {
             ShowWarning("No tienes Fragmentos suficientes");
-            return;
+            yield break;
         }
 
         WeaponData reward = GetRandomWaepon();
@@ -145,58 +173,65 @@ public class ShopManager : MonoBehaviour
         {
             int refund = GetDuplicateReward(reward);
             MonedaManager.instance.AddGold(refund);
-            ShowWarning($"Waepon repited:<color=yellow> +{refund} </color> oro obtenido");
-
+            warningMessage =
+         $"Waepon repited:<color=yellow> +{refund} </color> oro obtenido";
         }
         else
         {
             reward.unlocked = true;
-            ShowWarning("Obtuviste: " + reward.weaponName);
+            warningMessage = "Obtuviste: " + reward.weaponName;
         }
-        summonResult.Add(reward);
-        ShowSinglePull(reward);
 
+        summonResult.Add(reward);
+
+        yield return StartCoroutine(summonAnimation.PlaySingle(reward.rarity));
+
+        Debug.Log("Terminó SummonAnimation, ahora muestro resultado");
+
+        ShowSinglePull(reward);
+       
+        if (!string.IsNullOrEmpty(warningMessage))
+        {
+            ShowWarning(warningMessage);
+        }
     }
 
     public WeaponData GetRandomWaepon()
     {
-        int randomValue = Random.Range(1, 101);
-        WaeponRaririty selectRaririty;
-        if (randomValue <= 60)
+        if (currentBanner == null)
         {
-            selectRaririty = WaeponRaririty.Common;
-        }
-        else if (randomValue <= 85)
-        {
-            selectRaririty = WaeponRaririty.Rare;
-        }
-        else if (randomValue <= 95)
-        {
-            selectRaririty = WaeponRaririty.Epic;
-        }
-        else if (randomValue <= 99)
-        {
-            selectRaririty = WaeponRaririty.Legendary;
-        }
-        else
-        {
-            selectRaririty = WaeponRaririty.Mythic;
-        }
-
-        List<WeaponData> pool = new List<WeaponData>();
-
-        foreach (var waepon in dataBase.weapons)
-        {
-            if (waepon.obtenibleGacha && waepon.rarity == selectRaririty)
-            {
-                pool.Add(waepon);
-            }
-        }
-        if (pool.Count == 0)
-        {
-            print("No Hay Armas de rareza:" + selectRaririty);
+            Debug.LogError("No hay banner seleccionado");
             return null;
         }
+
+        int randomValue = Random.Range(1, 101);
+
+        WaeponRaririty selectRaririty;
+
+        if (randomValue <= 60)
+            selectRaririty = WaeponRaririty.Common;
+
+        else if (randomValue <= 85)
+            selectRaririty = WaeponRaririty.Rare;
+
+        else if (randomValue <= 95)
+            selectRaririty = WaeponRaririty.Epic;
+
+        else if (randomValue <= 99)
+            selectRaririty = WaeponRaririty.Legendary;
+
+        else
+            selectRaririty = WaeponRaririty.Mythic;
+
+
+        List<WeaponData> pool = GetPoolFromBanner(selectRaririty);
+
+        if (pool == null || pool.Count == 0)
+        {
+            Debug.LogWarning("Pool vacío: " + selectRaririty);
+            return null;
+        }
+
         return pool[Random.Range(0, pool.Count)];
     }
 
@@ -221,46 +256,54 @@ public class ShopManager : MonoBehaviour
 
     public void SummonTenWaepons()
     {
-        multiPullMode = true;
+        StartCoroutine(SummonTenWaeponsRoutine());
+    }
+    private IEnumerator SummonTenWaeponsRoutine()
+    {
         closePanelWaepons.gameObject.SetActive(false);
-        closeSkip.gameObject.SetActive(true);
+
+        summonResult.Clear();
+        indexRevelation = 0;
+        canNextPull = false;
+        multiPullMode = false;
+
         if (!MonedaManager.instance.SpendRelic(900))
         {
-            ShowWarning("Fondos Insuficientes");
-            return;
+            ShowWarning("No tienes Fragmentos suficientes");
+            yield break;
         }
-        summonResult.Clear();
-        singlePanel.SetActive(true);
-        multiResultGrid.SetActive(false);
-        foreach (Transform child in gridContet)
-        {
-            Destroy(child.gameObject);
-        }
+
+        WaeponRaririty[] rarities = new WaeponRaririty[10];
+
         for (int i = 0; i < 10; i++)
         {
             WeaponData reward = GetRandomWaepon();
 
-            if (reward == null)
-                continue;
-
             summonResult.Add(reward);
+            rarities[i] = reward.rarity;
+
             if (reward.unlocked)
             {
                 int refund = GetDuplicateReward(reward);
                 MonedaManager.instance.AddGold(refund);
-                Debug.Log($"Tirada {i + 1}: {reward.weaponName}  Raririty:  {reward.rarity.ToString()}: {refund}");
             }
             else
             {
                 reward.unlocked = true;
-                Debug.Log($"Tirada {i + 1}: {reward.weaponName}  Raririty:  {reward.rarity.ToString()}");
             }
-
         }
-        ShowWarning("Tirada x10 completada");
-        Debug.Log("Total guardadas: " + summonResult.Count);
-        indexRevelation = 0;
+
+        yield return StartCoroutine(summonAnimation.PlayTen(rarities));
+
         ResultPanel.gameObject.SetActive(true);
+        singlePanel.SetActive(true);
+        multiResultGrid.SetActive(false);
+        closeSkip.gameObject.SetActive(true);
+
+        multiPullMode = true;
+        indexRevelation = 0;
+        canNextPull = true;
+
         ShowNextPull();
     }
 
@@ -278,7 +321,31 @@ public class ShopManager : MonoBehaviour
     {
         showWaeponImg.sprite = weapon.sprite;
         name.text = weapon.weaponName;
+        iconElemental.sprite = weapon.elementIcon;
+        if ("Agua".Equals(weapon.elemental))
+        {
+            ui1.gameObject.SetActive(false);
+            ui3.gameObject.SetActive(false);
+            ui2.gameObject.SetActive(true);
+            ui2.sprite = weapon.UI;
+        }
+        else if ("Viento".Equals(weapon.elemental) || "Fuego".Equals(weapon.elemental))
+        {
 
+            ui2.gameObject.SetActive(false);
+            ui3.gameObject.SetActive(false);
+            ui1.gameObject.SetActive(true);
+            ui1.sprite = weapon.UI;
+        }
+        else if ("None".Equals(weapon.elemental))
+        {
+            ui1.gameObject.SetActive(false);
+            ui2.gameObject.SetActive(false);
+            ui3.gameObject.SetActive(true);
+            ui3.sprite = weapon.UI;
+        }
+        bannerNameText.text = currentBanner.bannerName;
+        rareImg.sprite = weapon.raresaImg;
         ChangeEffectColor(weapon.rarity);
         rareEfect.SetActive(true);
 
@@ -361,6 +428,7 @@ public class ShopManager : MonoBehaviour
     {
         if (!canNextPull)
             return;
+
         canNextPull = false;
 
         if (indexRevelation >= summonResult.Count)
@@ -368,12 +436,15 @@ public class ShopManager : MonoBehaviour
             ShowMultiResult();
             return;
         }
+
         WeaponData weapon = summonResult[indexRevelation];
-        StartCoroutine(ShowWaeponReveal(weapon));
         indexRevelation++;
+
+        StartCoroutine(ShowWaeponReveal(weapon));
     }
     public void HandResultClick()
     {
+        Debug.Log($"Click -> canNextPull:{canNextPull} multiPullMode:{multiPullMode} index:{indexRevelation}");
         if (!canNextPull)
             return;
 
@@ -385,8 +456,10 @@ public class ShopManager : MonoBehaviour
 
     public void ShowMultiResult()
     {
+        Debug.Log("ShowMultiResult ejecutado");
 
         singlePanel.SetActive(false);
+        ResultPanel.gameObject.SetActive(true);
         multiResultGrid.SetActive(true);
         foreach (Transform child in gridContet)
         {
@@ -406,6 +479,15 @@ public class ShopManager : MonoBehaviour
     {
         ResultPanel.gameObject.SetActive(false);
         closePanelWaepons.gameObject.SetActive(true);
+
+        singlePanel.SetActive(true);
+        multiResultGrid.SetActive(false);
+        closeSkip.gameObject.SetActive(false);
+
+        summonResult.Clear();
+        indexRevelation = 0;
+        canNextPull = true;
+        multiPullMode = false;
     }
 
     void LoadBanners()
@@ -422,11 +504,92 @@ public class ShopManager : MonoBehaviour
     {
         currentBanner = banner;
 
-        currentBannerImage.sprite = currentBanner.bannerImage;
-        currentBannerName.text = currentBanner.bannerName;
-        currentBannerSerie.text = currentBanner.serie;
-        //currentBannerDescription.text = currentBanner.description;
+        if (currentBanner.Id == 1)
+        {
+            currentBannerImage.sprite = currentBanner.bannerImage;
+            currentBannerName.text = string.Empty;
+            currentBannerDescription.gameObject.SetActive(false);
+            currentBannerInitialDescription.gameObject.SetActive(true);
+            currentBannerInitialDescription.text = currentBanner.description;
+        }
+        else
+        {
+            currentBannerInitialDescription.gameObject.SetActive(false);
+            currentBannerDescription.gameObject.SetActive(true);
+            currentBannerImage.sprite = currentBanner.bannerImage;
+
+            currentBannerName.color = new Color(0.96f, 0.77f, 0.26f);
+
+            currentBannerName.text = currentBanner.bannerName;
+            //currentBannerSerie.text = currentBanner.serie;
+
+            currentBannerDescription.text = currentBanner.description;
+        }
+            
+        
 
     }
 
+    private List<WeaponData> GetPoolFromBanner(WaeponRaririty rarity)
+    {
+        switch (rarity)
+        {
+            case WaeponRaririty.Common:
+                return commonWeapons;
+
+            case WaeponRaririty.Rare:
+                return rareWeapons;
+
+            case WaeponRaririty.Epic:
+                return epicWeapons;
+
+            case WaeponRaririty.Legendary:
+                return currentBanner.legendaryWeapons;
+
+            case WaeponRaririty.Mythic:
+                return currentBanner.mythicWeapons;
+
+            default:
+                return null;
+        }
+    }
+    /*Muestra el pannel de detalles*/
+    public void ShowBannerDetails()
+    {
+        print("Details" + currentBanner);
+        if (currentBanner == null) return;
+        closePanelWaepons.gameObject.SetActive(false);
+        detailsBannerPanel.gameObject.SetActive(true);
+
+        nameBannerDetails.text = currentBanner.bannerName;
+
+        serieBannerDetails.text = "<color=white>Serie: </color> " + currentBanner.serie;
+        // NUEVO
+        serieBannerDetails.color = currentBanner.serieColor;
+        loreDetails.text = currentBanner.lore;
+        bannerImageDetails.sprite = currentBanner.bannerFondo;
+
+        foreach (Transform child in bannerDetailContect)
+            Destroy(child.gameObject);
+
+
+        AddWeaponsToDetail(currentBanner.legendaryWeapons);
+        AddWeaponsToDetail(currentBanner.mythicWeapons);
+        
+    }
+
+    private void AddWeaponsToDetail(List<WeaponData> weapons)
+    {
+        foreach (var weapon in weapons)
+        {
+            GameObject obj = Instantiate(weaponBannerDetails, bannerDetailContect);
+            obj.GetComponent<DetailsBannerWeapons>().SetUp(weapon);
+        }
+    }
+
+    public void CloseDetails()
+    {
+        closePanelWaepons.gameObject.SetActive(true );
+        detailsBannerPanel.gameObject.SetActive(false);
+    }
 }

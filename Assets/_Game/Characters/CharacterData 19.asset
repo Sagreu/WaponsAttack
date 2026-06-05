@@ -18,9 +18,9 @@ MonoBehaviour:
   gender: Femenino
   role: Ronin Felina
   icon: {fileID: 21300000, guid: 098d031fbad8fbb44bb9946ff11cbd33, type: 3}
-  portrait: {fileID: 21300000, guid: 098d031fbad8fbb44bb9946ff11cbd33, type: 3}
-  tienda: {fileID: -3721727169389607820, guid: f6c72bfd9468f9642ab0aff553d22a3f, type: 3}
-  sombraTienda: {fileID: -3721727169389607820, guid: f6c72bfd9468f9642ab0aff553d22a3f, type: 3}
+  portrait: {fileID: 8891538814427911009, guid: 0bfeaadce0438314eb415451fef1ec5d, type: 3}
+  tienda: {fileID: 2767389029486476668, guid: f03072e323609f74e89b1db3162021c4, type: 3}
+  sombraTienda: {fileID: 2767389029486476668, guid: f03072e323609f74e89b1db3162021c4, type: 3}
   unlocked: 1
   priceGold: 41000
   purchased: 1

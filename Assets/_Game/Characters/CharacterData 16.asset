@@ -18,7 +18,9 @@ MonoBehaviour:
   gender: Femenino
   role: Guardiana del Bosque
   icon: {fileID: 21300000, guid: 25ea1148a5b317346946c44dd0994557, type: 3}
-  portrait: {fileID: 21300000, guid: 25ea1148a5b317346946c44dd0994557, type: 3}
+  portrait: {fileID: -1105847137646337899, guid: d96832fb149b7dd4491a79d13265a1b7, type: 3}
+  tienda: {fileID: -6679050185671710997, guid: 46673da804279b14d9bf1caf0d4fc57d, type: 3}
+  sombraTienda: {fileID: -6679050185671710997, guid: 46673da804279b14d9bf1caf0d4fc57d, type: 3}
   unlocked: 0
   priceGold: 35000
   purchased: 0

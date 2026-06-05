@@ -17,9 +17,9 @@ public class BannerSlotUI : MonoBehaviour
         weaponDataBanner = data;
         shopManager = manager;
 
-        bannerImage.sprite = weaponDataBanner.bannerImage;
-        bannerNameText.text = weaponDataBanner.description;
-        serieText.text = weaponDataBanner.serie;
+        bannerImage.sprite = weaponDataBanner.bannerFondo;
+        //bannerNameText.text = weaponDataBanner.description; 
+        //serieText.text = weaponDataBanner.serie;
     }
 
     public void SelectBanner()

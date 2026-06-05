@@ -18,7 +18,9 @@ MonoBehaviour:
   gender: Femenino
   role: Bailarina de Espadas
   icon: {fileID: 21300000, guid: 2b375c524ea122541bcc968ffdb5ee82, type: 3}
-  portrait: {fileID: 21300000, guid: 2b375c524ea122541bcc968ffdb5ee82, type: 3}
+  portrait: {fileID: -5296585461087961228, guid: d1f987cf05462054bb9bbeb04ed5893d, type: 3}
+  tienda: {fileID: -3456091806882691598, guid: 49d8267d0c4008748a9ee4be5da96e92, type: 3}
+  sombraTienda: {fileID: -3456091806882691598, guid: 49d8267d0c4008748a9ee4be5da96e92, type: 3}
   unlocked: 0
   priceGold: 29000
   purchased: 0

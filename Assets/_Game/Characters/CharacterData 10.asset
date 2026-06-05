@@ -19,7 +19,9 @@ MonoBehaviour:
   gender: Femenino
   role: Recolectora de Almas
   icon: {fileID: 21300000, guid: 70dad6170318df340abe428d217411fc, type: 3}
-  portrait: {fileID: 21300000, guid: 70dad6170318df340abe428d217411fc, type: 3}
+  portrait: {fileID: -506208333174024162, guid: 22e95573f4bf0914fb3b16bdccb6ca7f, type: 3}
+  tienda: {fileID: 6806728380951592095, guid: 43fd274bebcadbf4e8cc9c90d1982845, type: 3}
+  sombraTienda: {fileID: 6806728380951592095, guid: 43fd274bebcadbf4e8cc9c90d1982845, type: 3}
   unlocked: 0
   priceGold: 23000
   purchased: 0

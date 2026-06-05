@@ -18,7 +18,9 @@ MonoBehaviour:
   gender: Femenino
   role: Peleadora Salvaje
   icon: {fileID: 21300000, guid: 9f7959606178e494db103da2ae0e88f8, type: 3}
-  portrait: {fileID: 21300000, guid: 9f7959606178e494db103da2ae0e88f8, type: 3}
+  portrait: {fileID: -4273697280903253349, guid: 957e5cdad6eb7464ba1d13c1afb35e87, type: 3}
+  tienda: {fileID: -7056323042112477357, guid: f7c6481bed3c9da4ba1dfc44cfd2c366, type: 3}
+  sombraTienda: {fileID: -7056323042112477357, guid: f7c6481bed3c9da4ba1dfc44cfd2c366, type: 3}
   unlocked: 0
   priceGold: 31000
   purchased: 0

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 47a7787ff5202274fbbae78946717f3e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 293497
+  packageName: "UI Frame FX \uFF08easier to create\uFF09"
+  packageVersion: 1.0
+  assetPath: Assets/GUI FX/Materials/CircleW.mat
+  uploadId: 826494

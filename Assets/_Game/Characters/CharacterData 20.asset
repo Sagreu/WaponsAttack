@@ -20,6 +20,8 @@ MonoBehaviour:
   role: Reina de Arena
   icon: {fileID: 21300000, guid: 701da978d09ac5b4c9f9ead7cf7f9c8b, type: 3}
   portrait: {fileID: 4857494219788852054, guid: 3ad3e9202b4cbf44ab2196f1e7e4f1ea, type: 3}
+  tienda: {fileID: -3721727169389607820, guid: f6c72bfd9468f9642ab0aff553d22a3f, type: 3}
+  sombraTienda: {fileID: -3721727169389607820, guid: f6c72bfd9468f9642ab0aff553d22a3f, type: 3}
   unlocked: 1
   priceGold: 43000
   purchased: 1

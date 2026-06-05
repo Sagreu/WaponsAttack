@@ -19,7 +19,9 @@ MonoBehaviour:
   gender: Femenino
   role: Cazadora de Bestias
   icon: {fileID: 21300000, guid: 901bedd8bfa3302438211c3416f97efc, type: 3}
-  portrait: {fileID: 21300000, guid: 901bedd8bfa3302438211c3416f97efc, type: 3}
+  portrait: {fileID: -1422994807953864320, guid: 60efd1588a382a040b5fffe48585f5c6, type: 3}
+  tienda: {fileID: -6161395153118224709, guid: 828bc52deb71d094d8f6fc5cac87f676, type: 3}
+  sombraTienda: {fileID: -6161395153118224709, guid: 828bc52deb71d094d8f6fc5cac87f676, type: 3}
   unlocked: 0
   priceGold: 19000
   purchased: 0

@@ -13,9 +13,25 @@ MonoBehaviour:
   m_Name: Inicial_Banner
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataBanner
   Id: 1
-  bannerName: BANNER CARMESI
-  description: Forjadas con las partes de un dragon carmesi
-  serie: Serie Calamidad Carmesi
-  bannerImage: {fileID: 21300000, guid: 1bd671f695718f24e962390064e0d030, type: 3}
-  legendaryWeapons: []
-  mythicWeapons: []
+  bannerName: Reliquias Ancestrales
+  description: "Las reliquias m\xE1s poderosas de los elementos aguardan a un nuevo
+    portador. Invoca armas legendarias y m\xEDticas nacidas de fuego, agua y viento."
+  serie: 'Reliquias Ancestrales '
+  bannerImage: {fileID: 6605028550737198929, guid: c25a9f48bc2f7d94db2589c350a7fe0c, type: 3}
+  legendaryWeapons:
+  - {fileID: 11400000, guid: fe7a34f19c51757469facbd64f604956, type: 2}
+  - {fileID: 11400000, guid: fd912b612c13fbd4bb7bd836926facb4, type: 2}
+  - {fileID: 11400000, guid: 30d6d71de06e9984196a7a352e85ad7d, type: 2}
+  - {fileID: 11400000, guid: 0f2c9756ae7ad154abafb57b0341ff42, type: 2}
+  - {fileID: 11400000, guid: 3e2fe7b9c1c21ee4e871f8dffc977d92, type: 2}
+  - {fileID: 11400000, guid: 34e465dbc2dcbf146b5893900356a6ef, type: 2}
+  mythicWeapons:
+  - {fileID: 11400000, guid: d15ef6a0ff99ea94e962c875b4c169a3, type: 2}
+  - {fileID: 11400000, guid: 22a27a6d89f36b6419738190aacdc973, type: 2}
+  - {fileID: 11400000, guid: a27c99aaadd149242a6bee19f39df159, type: 2}
+  - {fileID: 11400000, guid: ff717225b2f61e44b803ae327494c3c2, type: 2}
+  - {fileID: 11400000, guid: d52622ca47706324ebb776fa64957e0e, type: 2}
+  - {fileID: 11400000, guid: 18d5d9739ec9ae24882fab3b909cbe50, type: 2}
+  bannerFondo: {fileID: 6605028550737198929, guid: c25a9f48bc2f7d94db2589c350a7fe0c, type: 3}
+  lore: 
+  serieColor: {r: 1, g: 1, b: 1, a: 1}

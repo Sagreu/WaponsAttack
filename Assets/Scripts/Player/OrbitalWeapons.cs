@@ -35,7 +35,7 @@ public class OrbitalWeapons : MonoBehaviour
 
     public WeaponData Data => data;
    // public int Durability => durability;
-    public int DurabilityMax => data != null ? data.durability : 1;
+
 
     private void Awake()
     {

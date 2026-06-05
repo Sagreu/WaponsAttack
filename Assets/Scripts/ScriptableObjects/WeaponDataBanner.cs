@@ -18,4 +18,9 @@ public class WeaponDataBanner : ScriptableObject
     [Header("WeaponsBy Rarity")]
     public List<WeaponData> legendaryWeapons;
     public List<WeaponData> mythicWeapons;
+    public Sprite bannerFondo;
+    [TextArea]
+    public string lore;
+    [Header("UI")]
+    public Color serieColor = Color.white;
 }

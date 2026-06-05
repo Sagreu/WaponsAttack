@@ -250,7 +250,7 @@ public class InventoryManager : MonoBehaviour
         {
             foreach (var weapon in dataBase.weapons)
             {
-                if (weapon.id.ToString() == id)
+                if (weapon.ID.ToString() == id) 
                 {
                     weaponsEquipadas.Add(weapon);
                     break;
@@ -266,7 +266,7 @@ public class InventoryManager : MonoBehaviour
 
         foreach (var weapon in weaponsEquipadas)
         {
-            ids.Add(weapon.id.ToString());
+            ids.Add(weapon.ID.ToString());
         }
 
         string saveData = string.Join(",", ids);

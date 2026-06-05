@@ -18,7 +18,9 @@ MonoBehaviour:
   gender: Femenino
   role: Acechadora Nocturna
   icon: {fileID: 21300000, guid: 80edf9936cc84ae408a354fb4ed21601, type: 3}
-  portrait: {fileID: 21300000, guid: 80edf9936cc84ae408a354fb4ed21601, type: 3}
+  portrait: {fileID: -14268977212437130, guid: fabd25a569dd8ac46ab5a7697f8c22ff, type: 3}
+  tienda: {fileID: 6394867508361815345, guid: 0b009db8fe0bead46bd6ee77e9718b5f, type: 3}
+  sombraTienda: {fileID: 6394867508361815345, guid: 0b009db8fe0bead46bd6ee77e9718b5f, type: 3}
   unlocked: 0
   priceGold: 37000
   purchased: 0

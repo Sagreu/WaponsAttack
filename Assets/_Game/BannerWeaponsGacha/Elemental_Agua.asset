@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3745ad044cd8ef43884a7abc236c7d6, type: 3}
+  m_Name: Elemental_Agua
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponDataBanner
+  Id: 3
+  bannerName: ELEMENTALES DE AGUA
+  description: "Desde las profundidades de oc\xE9anos inexplorados emergen reliquias
+    bendecidas por esp\xEDritus marinos. Invoca espadas nacidas de corrientes ancestrales
+    y descubre tesoros ocultos bajo las mareas eternas. Solo los elegidos podr\xE1n
+    reclamar el poder de las armas m\xE1s raras del abismo."
+  serie: Herederas del Abismo Eterno
+  bannerImage: {fileID: 599145942639686628, guid: 121f7776f662df745bdfd81e06c1aa92, type: 3}
+  legendaryWeapons:
+  - {fileID: 11400000, guid: cdc14b9b8062c0b4fad4b9435c0e7b63, type: 2}
+  - {fileID: 11400000, guid: 07ad4d2f584baeb48b9de8b378874350, type: 2}
+  mythicWeapons:
+  - {fileID: 11400000, guid: ef464c9ef06b4d04fb73a8f57cbc3d31, type: 2}
+  - {fileID: 11400000, guid: 559e549b96c35ba4e93d631e0f00f9d1, type: 2}
+  bannerFondo: {fileID: -9147902508683659914, guid: e7851816b63c3074cbbd68a6e1704268, type: 3}
+  lore: "Hace siglos, los esp\xEDritus marinos forjaron armas con coral ancestral,
+    escamas de leviatanes y fragmentos de corrientes eternas para proteger los secretos
+    de las profundidades. Con el tiempo, sus guardianes desaparecieron y las reliquias
+    quedaron ocultas en el abismo. Hoy, estas armas legendarias son conocidas como
+    las Herederas del Abismo Eterno, y solo responden a quienes son dignos del llamado
+    del mar."
+  serieColor: {r: 0.3137255, g: 0.74509805, b: 1, a: 1}

@@ -19,7 +19,9 @@ MonoBehaviour:
   gender: Femenino
   role: Ninja Felina
   icon: {fileID: 21300000, guid: 514e0999b7f003047aabae18b16f39f7, type: 3}
-  portrait: {fileID: 21300000, guid: 514e0999b7f003047aabae18b16f39f7, type: 3}
+  portrait: {fileID: -4360082526272665862, guid: abbdefbec8201544dba25501c3cf2760, type: 3}
+  tienda: {fileID: -4427384532732563367, guid: f47b4096af2eefd4fbdd2d3bd3553f82, type: 3}
+  sombraTienda: {fileID: -4427384532732563367, guid: f47b4096af2eefd4fbdd2d3bd3553f82, type: 3}
   unlocked: 0
   priceGold: 25000
   purchased: 0

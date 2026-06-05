@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d6bd1fef0b430804f87aa0a326debfad
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 293497
+  packageName: "UI Frame FX \uFF08easier to create\uFF09"
+  packageVersion: 1.0
+  assetPath: Assets/GUI FX/UI Frame FX/Scripts/FrameSprite.cs
+  uploadId: 826494

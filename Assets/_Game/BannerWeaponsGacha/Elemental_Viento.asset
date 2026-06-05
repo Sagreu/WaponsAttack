@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3745ad044cd8ef43884a7abc236c7d6, type: 3}
+  m_Name: Elemental_Viento
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponDataBanner
+  Id: 2
+  bannerName: ELEMENTALES DE VIENTO
+  description: "Los cielos se abren y las corrientes eternas responden al llamado
+    de los h\xE9roes. Invoca reliquias forjadas por tempestades legendarias y domina
+    la velocidad y precisi\xF3n del viento. Entre las nubes reposan armas capaces
+    de cambiar el rumbo de cualquier batalla."
+  serie: Herederas del Viento Eterno
+  bannerImage: {fileID: -859178512906440903, guid: 3f4dd6cceb3c8a245970ab2b4a266c97, type: 3}
+  legendaryWeapons:
+  - {fileID: 11400000, guid: cb4caaff49325de47af16414bc6da5b1, type: 2}
+  - {fileID: 11400000, guid: b75d77cb6d6c8b84b8a791ebe8c23616, type: 2}
+  mythicWeapons:
+  - {fileID: 11400000, guid: 1bb7df735fcd4ff4b82a4bd6b833c87e, type: 2}
+  - {fileID: 11400000, guid: a9f033a4883a70a4384b68414b8f3b7e, type: 2}
+  bannerFondo: {fileID: -4085799795623944208, guid: 89ec870433bd9294790daa7e4307a524, type: 3}
+  lore: "Hace siglos, los esp\xEDritus del cielo forjaron armas con fragmentos de
+    tormentas ancestrales y corrientes eternas para custodiar los secretos de los
+    vientos. Con el tiempo, sus portadores desaparecieron y las reliquias quedaron
+    ocultas entre nubes y tempestades. Hoy, estas armas legendarias son conocidas
+    como las Herederas de la Tempestad Eterna, y solo responden a quienes poseen
+    la velocidad y determinaci\xF3n del viento."
+  serieColor: {r: 0.4862745, g: 1, b: 0.4862745, a: 1}

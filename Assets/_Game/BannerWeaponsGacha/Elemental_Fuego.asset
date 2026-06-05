@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3745ad044cd8ef43884a7abc236c7d6, type: 3}
+  m_Name: Elemental_Fuego
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponDataBanner
+  Id: 4
+  bannerName: ELEMENTALES DE FUEGO
+  description: "Las brasas de una era olvidada vuelven a encenderse. Invoca espadas
+    forjadas en volcanes ancestrales y empu\xF1a reliquias capaces de reducir ej\xE9rcitos
+    enteros a cenizas. Entre las llamas aguardan armas legendarias y m\xEDticas cuyo
+    poder desaf\xEDa incluso a los dioses del fuego."
+  serie: Herederas de la Llama Eterna
+  bannerImage: {fileID: 8269974606810815022, guid: ecd07d3e86a8cff4ebef4ac5d70364f0, type: 3}
+  legendaryWeapons:
+  - {fileID: 11400000, guid: 26c1308355c6f85419fa2d5108f71c79, type: 2}
+  - {fileID: 11400000, guid: 5fb3b0ef575b6734c966d422067037a1, type: 2}
+  mythicWeapons:
+  - {fileID: 11400000, guid: fc69ca42f70cfd9439b9bafd0c14dfe0, type: 2}
+  - {fileID: 11400000, guid: 72b7440489285b44ba6d1b3605ded237, type: 2}
+  bannerFondo: {fileID: 21300000, guid: b328a9d32dec94c4da92ef44f9b57a0f, type: 3}
+  lore: "Hace siglos, los dioses del fuego forjaron armas con magma ancestral, n\xFAcleos
+    volc\xE1nicos y fragmentos de llamas eternas para custodiar el poder de las monta\xF1as
+    ardientes. Con el tiempo, sus portadores desaparecieron y las reliquias quedaron
+    sepultadas bajo mares de lava. Hoy, estas armas legendarias son conocidas como
+    las Herederas de la Llama Eterna, y solo responden a quienes poseen la voluntad
+    de dominar el fuego."
+  serieColor: {r: 1, g: 0.21484132, b: 0, a: 1}

@@ -18,7 +18,9 @@ MonoBehaviour:
   gender: Femenino
   role: "Duelista \xC1gil"
   icon: {fileID: 21300000, guid: 5a26538d3b4c123439ad818429937204, type: 3}
-  portrait: {fileID: 21300000, guid: 5a26538d3b4c123439ad818429937204, type: 3}
+  portrait: {fileID: -8763794145071084030, guid: 07402513885a4d6468ca58448f922a55, type: 3}
+  tienda: {fileID: 3681682335279333945, guid: ede37ddc130a84e4caa6ccf07a3bdd28, type: 3}
+  sombraTienda: {fileID: 3681682335279333945, guid: ede37ddc130a84e4caa6ccf07a3bdd28, type: 3}
   unlocked: 0
   priceGold: 39000
   purchased: 0

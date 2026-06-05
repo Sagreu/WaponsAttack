@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fc5365092aa45e845b4f982f6e6b1590
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 293497
+  packageName: "UI Frame FX \uFF08easier to create\uFF09"
+  packageVersion: 1.0
+  assetPath: Assets/GUI FX/UI Frame FX/Scripts/FrameImageInOut.cs
+  uploadId: 826494

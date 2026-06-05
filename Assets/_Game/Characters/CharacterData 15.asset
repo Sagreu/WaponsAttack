@@ -18,7 +18,9 @@ MonoBehaviour:
   gender: Femenino
   role: Protectora Tribal
   icon: {fileID: 21300000, guid: 8ff35c7af6b4d88488d8ef7f94e640c4, type: 3}
-  portrait: {fileID: 21300000, guid: 8ff35c7af6b4d88488d8ef7f94e640c4, type: 3}
+  portrait: {fileID: 631369291329813310, guid: b45d4d4f4aaeb3842b305cf73f144b49, type: 3}
+  tienda: {fileID: 8025382437082768740, guid: d62b17c26df152043b5ca1502d6e21cc, type: 3}
+  sombraTienda: {fileID: 8025382437082768740, guid: d62b17c26df152043b5ca1502d6e21cc, type: 3}
   unlocked: 0
   priceGold: 33000
   purchased: 0

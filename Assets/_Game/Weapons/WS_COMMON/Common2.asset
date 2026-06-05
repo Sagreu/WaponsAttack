@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d5268ba3dcd284bae60d1e5468acae, type: 3}
+  m_Name: Common2
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  id: 1002
+  weaponName: "Filo Carmes\xED"
+  sprite: {fileID: 21300000, guid: 6076d3209ba3f1e4eb97bf0804e7a54e, type: 3}
+  iconRare: {fileID: 0}
+  damage: 10
+  unlocked: 1
+  description: '"Su hoja rojiza conserva un tenue calor."'
+  history: 
+  rarity: 0
+  obtenibleGacha: 0
+  elementIcon: {fileID: 827235857015622973, guid: c127d37edfcbd0a49a0183f0d390c778, type: 3}
+  elementalDagame: 0
+  velocityAtack: 0
+  UI: {fileID: -837348464906461421, guid: 6fd5be1aa22756a4e972a2088357b724, type: 3}
+  elemental: None
+  raresaImg: {fileID: -8868803461578586678, guid: 93563720037f2bd42a9b73aeb94b4c86, type: 3}

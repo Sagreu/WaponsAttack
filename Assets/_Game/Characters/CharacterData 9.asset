@@ -19,7 +19,9 @@ MonoBehaviour:
   gender: Femenino
   role: "Mercenaria Mec\xE1nica"
   icon: {fileID: 21300000, guid: 8a24c67e221ba1f4ebfa2ad9c707acfe, type: 3}
-  portrait: {fileID: 21300000, guid: 8a24c67e221ba1f4ebfa2ad9c707acfe, type: 3}
+  portrait: {fileID: -7901101268218768639, guid: 3c9711c2cd78fa3489d74eced16dcaad, type: 3}
+  tienda: {fileID: -6396693169120287361, guid: d4c107cac96d0784ea91ae3eb0da78b9, type: 3}
+  sombraTienda: {fileID: -6396693169120287361, guid: d4c107cac96d0784ea91ae3eb0da78b9, type: 3}
   unlocked: 0
   priceGold: 21000
   purchased: 0

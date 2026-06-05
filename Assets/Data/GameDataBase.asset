@@ -34,12 +34,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2c7c1841bd4bda9468d52b5009b4c21d, type: 2}
   - {fileID: 11400000, guid: cc3ac977d1fcb844da7a098d985f1510, type: 2}
   - {fileID: 11400000, guid: 2764a1d1a9b8db9439069153a035b94a, type: 2}
-  weapons:
-  - {fileID: 11400000, guid: 1e5222d6ab68f8d4a83663dc36e5b30b, type: 2}
-  - {fileID: 11400000, guid: 28f8a1f613e3509429150231035c4f1d, type: 2}
-  - {fileID: 11400000, guid: a321de0f290eddc4aaa2f9803f8b5136, type: 2}
-  - {fileID: 11400000, guid: 5bbff58d2232d264abd498f6c57792a1, type: 2}
-  - {fileID: 11400000, guid: e8f6a66a7fd18594da70ef589de5da2f, type: 2}
+  weapons: []
   levels:
   - {fileID: 11400000, guid: ad60ce986f545dd45b4558177a08038a, type: 2}
   - {fileID: 11400000, guid: 869af66d76df3de48b2ab2f900792f4a, type: 2}

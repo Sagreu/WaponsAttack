@@ -1,30 +1,37 @@
 using UnityEngine;
-[CreateAssetMenu(menuName = "Weapons/Weapon Data")]
- public class WeaponData : ScriptableObject
+
+
+[CreateAssetMenu(fileName = "NewWeapon", menuName = "Weapons/Weapon Data")]
+public class WeaponData : ScriptableObject
 {
+    [SerializeField] private int id;
+    public int ID => id;
+
     public string weaponName;
     public Sprite sprite;
-    public Sprite marco;
+    public Sprite iconRare;
+
     [Header("Stats")]
     public int damage = 10;
-    public int durability = 20;
 
-    [Tooltip("0 = no tiene tiempo de vida")]
-    public float lifeTime = 0;
-    
-    //aditional data
     public bool unlocked;
-    public int id;
+
     [TextArea]
     public string description;
+
     [TextArea]
     public string history;
-    //public string rareza;
+
     public WaeponRaririty rarity;
     public bool obtenibleGacha;
+    public Sprite elementIcon;
+    public int elementalDagame;
+    public int velocityAtack;
+    public Sprite UI;
+    public string elemental;
+    public Sprite raresaImg;
 
 }
-
 
 public enum WaeponRaririty
 {
